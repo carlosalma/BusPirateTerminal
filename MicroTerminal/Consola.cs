@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MicroTerminal
+namespace BusPirateTerminal
 {
     class Consola
     {

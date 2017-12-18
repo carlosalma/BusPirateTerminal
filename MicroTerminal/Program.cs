@@ -3,7 +3,7 @@ using System.IO.Ports;
 using System.Threading;
 using CommandLineParser.Exceptions;
 
-namespace MicroTerminal
+namespace BusPirateTerminal
 {
     class Program
     {

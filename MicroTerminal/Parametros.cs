@@ -2,7 +2,7 @@
 using CommandLineParser.Arguments;
 using System.IO.Ports;
 
-namespace MicroTerminal
+namespace BusPirateTerminal
 {
     // TODO: verificar los textos con las definiciones de los parámetros de comunicación.
     // TODO: traducir los textos.

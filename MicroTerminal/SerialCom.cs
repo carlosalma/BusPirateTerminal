@@ -1,6 +1,6 @@
 ﻿using System.IO.Ports;
 
-namespace MicroTerminal
+namespace BusPirateTerminal
 {
     class SerialCom
     {
