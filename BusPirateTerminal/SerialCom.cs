@@ -1,4 +1,24 @@
-﻿using System.IO.Ports;
+﻿//
+// SerialCom.cs: Comunicaciones mediante puerto serie.
+//
+// Authors:
+//   Carlos Alonso (carlos@carlosalma.es)
+//
+// Copyright (C) Apache License Version 2.0 (http://www.apache.org/licenses)
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+using System.IO.Ports;
+using System;
+using System.Threading;
+
+// TODO: Convertir en parámetro el rango de puertos a escanear en el método SerialCom()
 
 namespace BusPirateTerminal
 {
@@ -21,9 +41,9 @@ namespace BusPirateTerminal
         //
 
         /// <summary>
-        /// Auto configuración para BusPirate
-        /// Dispone de todos los parámetros por defecto
-        /// y localiza el puerto COM empleado.
+        ///   Auto configuración para BusPirate.
+        ///   Dispone de todos los parámetros por defecto
+        ///   y localiza el puerto COM empleado.
         /// </summary>
         public SerialCom()
         {
@@ -44,8 +64,8 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        /// Configuración manual.
-        /// Hay que introducir todos los parámetros
+        ///   Configuración manual.
+        ///   Hay que introducir todos los parámetros
         /// </summary>
         /// <param name="comPort"></param>
         /// <param name="comSpeed"></param>
@@ -77,8 +97,87 @@ namespace BusPirateTerminal
         // Métodos
         //
 
+        
+        public bool Conectar()
+        {
+            Consola consola = new Consola();
+            SerialCom comOk = new SerialCom();
+
+            if (comOk.ComOk)
+            {
+                consola.MsgConexionEstablecida(comOk.ComPort);
+
+                using (var serialPort = new SerialPort(comOk.ComPort, comOk.ComSpeed, comOk.ComParity, comOk.ComBits, comOk.ComStopBits))
+                {
+                    try
+                    {
+                        serialPort.Open();
+                    }
+                    catch (System.IO.IOException)
+                    {
+                        Console.WriteLine(value: $"{consola.Prompt}Puerto {comOk.ComPort} NO DISPONIBLE");
+                        //return;
+                    }
+
+                    bool ok = true;
+                    new Thread(() => ok = EscribirLineasDesde(serialPort)).Start();
+
+                    if (!ok)
+                        Console.WriteLine(value: $"{consola.Prompt}Cerrando consola ...");
+
+                    while (true)
+                    {
+                        Console.Write(value: consola.Prompt);
+                        var command = Console.ReadLine();
+
+                        try
+                        {
+                            if ((command == "quit") || (command == "QUIT"))
+                                break;
+
+                            serialPort.WriteLine(command);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(value: $"{consola.Prompt} {e}");
+                            // return;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine(value: $"{consola.Prompt}Conexión: NO ESTABLECIDA");
+            }
+
+            return true;
+        }
+
         /// <summary>
-        /// Verifica si la conexión con el puerto COM está disponible.
+        ///   Muestra por consola la respuesta del dispositivo
+        ///   conectado al puerto COM.
+        /// </summary>
+        /// <param name="comPort">
+        ///   Puerto COM empleado
+        /// </param>
+        /// <returns></returns>
+        private bool EscribirLineasDesde(SerialPort comPort)
+        {
+            bool ok = true;
+
+            try
+            {
+                while (true) Console.WriteLine(comPort.ReadLine());
+            }
+            catch (Exception)
+            {
+                ok = false;
+            }
+            return ok;
+        }
+
+        /// <summary>
+        ///   Verifica si la conexión con el puerto COM está disponible.
         /// </summary>
         /// <param name="comPort"></param>
         /// <returns>Conexión disponible</returns>
@@ -115,7 +214,7 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        /// Busca el puerto COM disponible dentro de un rango dado.
+        ///   Busca el puerto COM disponible dentro de un rango dado.
         /// </summary>
         /// <param name="portIni">Número de puerto inicial</param>
         /// <param name="portFin">Número de puerto final</param>

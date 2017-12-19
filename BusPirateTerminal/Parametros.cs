@@ -1,17 +1,35 @@
-﻿using System;
+﻿//
+// Parametros.cs: Gestión de los parámetros
+//
+// Authors:
+//   Carlos Alonso (carlos@carlosalma.es)
+//
+// Copyright (C) Apache License Version 2.0 (http://www.apache.org/licenses)
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+using System;
 using CommandLineParser.Arguments;
 using System.IO.Ports;
 
+// TODO: verificar los textos con las definiciones de los parámetros de comunicación.
+// TODO: traducir los textos.
+
 namespace BusPirateTerminal
 {
-    // TODO: verificar los textos con las definiciones de los parámetros de comunicación.
-    // TODO: traducir los textos.
-
     /// <summary>
-    /// Define los parámetros
+    ///   Define los parámetros
     /// </summary>
     class Parametros
     {
+        //
+        #region ParametrosDisponibles
         //
         private string modo;
         [EnumeratedValueArgument(typeof(string), 'm', "modo", 
@@ -24,8 +42,8 @@ namespace BusPirateTerminal
                 "los parámetros de comunicación con 'Bus Pirate' y el modo 'manual', que requiere \n " +
                 "de la introducción de todos los parámetros de comunicación.", 
             Example = "\n" +
-                "- Modo automático: MicroTerminal.exe || MicroTerminal.exe -m pirate \n" +
-                "- Modo manual: MicroTerminal.exe - manual -p COM3 -s 115200 -a none -b 8 -i 1")]
+                "- Modo automático: BusPirateTerminal.exe -m pirate \n" +
+                "- Modo manual: BusPirateTerminal.exe - m manual -p COM3 -s 115200 -a none -b 8 -i 1")]
         public string Modo { get => modo; set => modo = value; }
         //
         private string port;
@@ -58,7 +76,10 @@ namespace BusPirateTerminal
         //
         public string Cabecera { get; }
         public string Pie { get; }
-        
+        //
+        #endregion
+        //
+
         //
         // Constructor
         //
@@ -76,10 +97,15 @@ namespace BusPirateTerminal
         //
 
         /// <summary>
-        /// Muestra la ayuda sobre el uso de los parámetros
+        ///   Muestra la ayuda sobre el uso de los parámetros
         /// </summary>
-        /// <param name="parser"></param>
-        /// <param name="param">parámetros</param>
+        /// <param name="parser">
+        ///   Parser, analiza los parámetros pasados por línea
+        ///   de comandos.
+        /// </param>
+        /// <param name="param">
+        ///   Parámetros ppasados por línea de comandos
+        /// </param>
         public void MostrarAyudaParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
             parser.ShowUsageHeader = param.Cabecera;

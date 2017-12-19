@@ -1,6 +1,21 @@
-﻿using System;
+﻿//
+// Program.cs: Bloque principal.
+//
+// Authors:
+//   Carlos Alonso (carlos@carlosalma.es)
+//
+// Copyright (C) Apache License Version 2.0 (http://www.apache.org/licenses)
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+using System;
 using System.IO.Ports;
-using System.Threading;
 using CommandLineParser.Exceptions;
 
 namespace BusPirateTerminal
@@ -13,7 +28,8 @@ namespace BusPirateTerminal
             consola.MsgPresentacion();
 
             //
-            // Gestión de parámetros
+            #region GestionParametros
+            //
             CommandLineParser.CommandLineParser parser = new CommandLineParser.CommandLineParser();
             Parametros param = new Parametros();
             
@@ -28,99 +44,37 @@ namespace BusPirateTerminal
             }
 
             SeleccionParametros(parser, param);
-            // FIN: Gestión de parámetros
+
             //
-            
-            SerialCom comOk = new SerialCom();
-            
-            if (comOk.ComOk)
-            {
-                consola.MsgConexionEstablecida(comOk.ComPort);
-
-                using (var serialPort = new SerialPort(comOk.ComPort, comOk.ComSpeed, comOk.ComParity, comOk.ComBits, comOk.ComStopBits))
-                {
-                    try
-                    {
-                        serialPort.Open();
-                    }
-                    catch (System.IO.IOException)
-                    {
-                        Console.WriteLine(value: $"{consola.Prompt}Puerto {comOk.ComPort} NO DISPONIBLE");
-                        return;
-                    }
-
-                    bool ok = true;
-                    new Thread(() => ok = EscribirLineasDesde(serialPort)).Start();
-
-                    if (!ok)
-                    {
-                        Console.WriteLine(value: $"{consola.Prompt}Cerrando consola ...");
-                    }
-
-                    while (true)
-                    {
-                        Console.Write(value: consola.Prompt);
-                        var command = Console.ReadLine();
-
-                        try
-                        {
-                            if ((command == "quit") || (command == "QUIT"))
-                            {
-                                break;
-                            }
-                            serialPort.WriteLine(command);
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(value: $"{consola.Prompt} {e}");
-                            return;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine(value: $"{consola.Prompt}Conexión: NO ESTABLECIDA");
-            }
+            #endregion
+            //
         }
 
         /// <summary>
-        /// Muestra por consola la respuesta del dispositivo
-        /// conectado al puerto COM.
+        ///   Acciones a realizar con los parámetros.
         /// </summary>
-        /// <param name="comPort">Puerto COM empleado</param>
-        /// <returns></returns>
-        static bool EscribirLineasDesde(SerialPort comPort)
-        {
-            bool ok = true;
-
-            try
-            {
-                while (true) Console.WriteLine(comPort.ReadLine());
-            }
-            catch (Exception)
-            {
-                ok = false;
-            }
-            return ok;
-        }
-
-        /// <summary>
-        /// Acciones a realizar con los parámetros.
-        /// </summary>
-        /// <param name="parser"></param>
-        /// <param name="param">parámetros</param>
+        /// <param name="parser">
+        ///   Parser, analiza los parámetros pasados por línea
+        ///   de comandos.
+        /// </param>
+        /// <param name="param">
+        ///   Parámetros ppasados por línea de comandos
+        /// </param>
         static void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
+            SerialCom conexionSerie = new SerialCom();
+            Consola consola = new Consola();
+
             // Acceso a los valores de los parámetros
-            if (param.Modo == "auto")
+            if (param.Modo == "pirate")
             {
-                Console.WriteLine("-------------------->>>> Has seleccionado el modo auto");
+                conexionSerie.Conectar();
             }
             else if (param.Modo == "manual")
             {
-                Console.WriteLine("-------------------->>>>> Has seleccionado el modo manual");
+                
             }
+            
             if (!param.Help)
             {
                 param.MostrarAyudaParametros(parser, param);
@@ -128,4 +82,3 @@ namespace BusPirateTerminal
         }
     }
 }
-
