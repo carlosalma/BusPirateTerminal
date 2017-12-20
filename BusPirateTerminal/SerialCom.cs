@@ -64,6 +64,18 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
+        ///   Entrada de parámetros de comunicación via parámetro.
+        /// </summary>
+        /// <param name="comPort"></param>
+        /// <param name="comSpeed"></param>
+        public SerialCom(string comPort, int comSpeed)
+        {
+            ComPort = comPort;
+            ComSpeed = comSpeed;
+            // TODO: completar la lista de parámetros
+        }
+
+        /// <summary>
         ///   Configuración manual.
         ///   Hay que introducir todos los parámetros
         /// </summary>

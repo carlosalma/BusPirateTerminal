@@ -31,7 +31,7 @@ namespace BusPirateTerminal
             #region GestionParametros
             //
             CommandLineParser.CommandLineParser parser = new CommandLineParser.CommandLineParser();
-            Parametros param = new Parametros();
+            Parametros param = new Parametros(consola.Version);
             
             try
             {
@@ -62,19 +62,67 @@ namespace BusPirateTerminal
         /// </param>
         static void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
-            SerialCom conexionSerie = new SerialCom();
+            
             Consola consola = new Consola();
 
             // Acceso a los valores de los parámetros
             if (param.Modo == "pirate")
             {
+                SerialCom conexionSerie = new SerialCom();
                 conexionSerie.Conectar();
             }
-            else if (param.Modo == "manual")
+
+            if (param.Modo == "manual")
             {
-                
-            }
-            
+                bool ok = true;
+                string paramPort = null;
+                int paramSpeed = 0;
+
+                if (param.Port == null)
+                {
+                    Console.WriteLine("No se ha introducido el numero de puerto");
+                    ok = false;
+                }
+                else
+                {
+                    // TODO: Verificar que la entrada está dentro de rango
+                    // TODO: Conversión a mayusculas si procede
+                    paramPort = param.Port;
+                }
+
+                if (param.Speed > 0)
+                {
+                    // TODO: Verificar que la entrada está dentro de rango
+                    paramSpeed = param.Speed;                                    }
+                else
+                {
+                    Console.WriteLine("No se ha introducido la velocidad");
+                    ok = false;
+                }
+
+                if (param.Parity == null)
+                {
+                    Console.WriteLine("No se ha introducido el numero de puerto");
+                    ok = false;
+                }
+                if (param.Port == null)
+                {
+                    Console.WriteLine("No se ha introducido el numero de puerto");
+                    ok = false;
+                }
+                if (param.Port == null)
+                {
+                    Console.WriteLine("No se ha introducido el numero de puerto");
+                    ok = false;
+                }
+
+                if (ok)
+                {
+                    SerialCom conexionSerie = new SerialCom();
+                    conexionSerie.Conectar();
+                }
+            } 
+                             
             if (!param.Help)
             {
                 param.MostrarAyudaParametros(parser, param);

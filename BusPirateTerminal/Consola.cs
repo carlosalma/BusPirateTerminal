@@ -5,17 +5,18 @@ namespace BusPirateTerminal
     class Consola
     {
         public string Prompt { get; }
+        public string Version { get; }
 
         public Consola()
         {
             Prompt = "::> ";
+            Version = "0.0.1";
         }
 
         public void MsgPresentacion()
         {
             Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("Consola de acceso a Bus Pirate \n");
-            Console.WriteLine("                                 -- C.AL.MA --");
+            Console.WriteLine("Consola de acceso a Bus Pirate");
             Console.WriteLine("----------------------------------------------");
         }
 

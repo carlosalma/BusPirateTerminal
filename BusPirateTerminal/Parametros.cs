@@ -20,7 +20,7 @@ using System.IO.Ports;
 
 // TODO: verificar los textos con las definiciones de los parámetros de comunicación.
 // TODO: traducir los textos.
-
+// TODO: convertir todos losparámetros a tipo string
 namespace BusPirateTerminal
 {
     /// <summary>
@@ -83,13 +83,13 @@ namespace BusPirateTerminal
         //
         // Constructor
         //
-        public Parametros()
+        public Parametros(string version)
         {
             Cabecera = "\n" +
                 "Mini terminal de puerto serie que permite establecer comunicación con \n" +
                 "el interface de 'Bus Pirate'. \n";
 
-            Pie = "Autor: Carlos AlMa - 2017 - (Ver 0.11) \n";
+            Pie = $"Autor: Carlos AlMa - 2017 - ({version}) \n";
         }
 
         //
