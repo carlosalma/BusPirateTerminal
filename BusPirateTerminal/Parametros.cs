@@ -17,10 +17,27 @@
 using System;
 using CommandLineParser.Arguments;
 using System.IO.Ports;
+using System.Collections.Generic;
 
 // TODO: verificar los textos con las definiciones de los parámetros de comunicación.
 // TODO: traducir los textos.
-// TODO: convertir todos losparámetros a tipo string
+// TODO: sacar los textos de esta clase
+
+// TODO: Anadir al texto de ayuda
+/* Paridad
+Even - Establece el bit de paridad para que el recuento de bits definidos es un número par.
+Mark - Deja el bit de paridad que se establece en 1.
+None - Se produce ninguna comprobación de paridad.
+Odd - Establece el bit de paridad para que el recuento de bits establecidos sea un número impar.
+Space - Deja el bit de paridad establecido en 0.
+*/
+
+// TODO: Anadir al texto de ayuda
+/* Velocidad
+110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000, 57600, 115200, 128000, 153600, 230400, 256000, 230400, 256000, 460800, 921600
+*/
+
+
 namespace BusPirateTerminal
 {
     /// <summary>
@@ -28,19 +45,21 @@ namespace BusPirateTerminal
     /// </summary>
     class Parametros
     {
+        enum PosibleParity {Even, Mark, None, Odd, Space };
+
         //
         #region ParametrosDisponibles
         //
         private string modo;
-        [EnumeratedValueArgument(typeof(string), 'm', "modo", 
+        [EnumeratedValueArgument(typeof(string), 'm', "modo",
             AllowedValues = "pirate;manual",
-            Description = 
+            Description =
                 "Modos de configuración: <pirate> auto-configuración, <manual> configuración manual.",
             IgnoreCase = true,
-            FullDescription =  
+            FullDescription =
                 "Existen dos modos de configuración, el modo 'pirate' que configura automáticamente \n " +
                 "los parámetros de comunicación con 'Bus Pirate' y el modo 'manual', que requiere \n " +
-                "de la introducción de todos los parámetros de comunicación.", 
+                "de la introducción de todos los parámetros de comunicación.",
             Example = "\n" +
                 "- Modo automático: BusPirateTerminal.exe -m pirate \n" +
                 "- Modo manual: BusPirateTerminal.exe - m manual -p COM3 -s 115200 -a none -b 8 -i 1")]
@@ -54,9 +73,9 @@ namespace BusPirateTerminal
         [ValueArgument(typeof(int), 's', "speed", Description = "Velocidad de comunicación en bps")]
         public int Speed { get => speed; set => speed = value; }
         //
-        private Parity parity;
-        [ValueArgument(typeof(Parity), 'a', "parity", Description = "Bit de paridad")]
-        public Parity Parity { get => parity; set => parity = value; }
+        private String parity;
+        [ValueArgument(typeof(String), 'a', "parity", Description = "Bit de paridad")]
+        public String Parity { get => parity; set => parity = value; }
         //
         private int combits;
         [ValueArgument(typeof(int), 'b', "combits", Description = "Número de bits de comunicación")]
@@ -111,6 +130,116 @@ namespace BusPirateTerminal
             parser.ShowUsageHeader = param.Cabecera;
             parser.ShowUsageFooter = param.Pie;
             parser.ShowUsage();
+        }
+
+        /// <summary>
+        ///   Acciones a realizar con los parámetros.
+        ///   Verifica si los parámetros introducidos están dentro 
+        ///   de rango, de lo contrario asigna valores por defecto
+        ///   o muestra mensajes de error.
+        /// </summary>
+        /// <param name="parser">
+        ///   Parser, analiza los parámetros pasados por línea
+        ///   de comandos.
+        /// </param>
+        /// <param name="param">
+        ///   Parámetros ppasados por línea de comandos
+        /// </param>
+        public void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
+        {
+
+            Consola consola = new Consola();
+
+            // Acceso a los valores de los parámetros
+            if (param.Modo == "pirate")
+            {
+                SerialCom conexionSerie = new SerialCom();
+                conexionSerie.Conectar();
+            }
+
+            if (param.Modo == "manual")
+            {
+                bool ok = true;
+                string paramPort = null;
+                int paramSpeed = 0;
+                //
+                if (param.Port == null)
+                {
+                    Console.WriteLine(value: $"{consola.Prompt}No se ha introducido el número de puerto.");
+                    ok = false;
+                }
+                else
+                {
+                    // TODO: Verificar que la entrada está dentro de rango
+                    // TODO: Conversión a mayusculas si procede
+                    paramPort = param.Port;
+                }
+                //
+                if (param.Speed > 0)
+                {
+                    List<int> posibleSpeed = new List<int>();
+                    posibleSpeed.Add(item: 110);
+                    posibleSpeed.Add(item: 300);
+                    posibleSpeed.Add(item: 600);
+                    posibleSpeed.Add(item: 1200);
+                    posibleSpeed.Add(item: 2400);
+                    posibleSpeed.Add(item: 4800);
+                    posibleSpeed.Add(item: 9600);
+                    posibleSpeed.Add(item: 14400);
+                    posibleSpeed.Add(item: 19200);
+                    posibleSpeed.Add(item: 28800);
+                    posibleSpeed.Add(item: 38400);
+                    posibleSpeed.Add(item: 56000);
+                    posibleSpeed.Add(item: 57600);
+                    posibleSpeed.Add(item: 115200);
+                    posibleSpeed.Add(item: 128000);
+                    posibleSpeed.Add(item: 230400);
+                    posibleSpeed.Add(item: 256000);
+                    posibleSpeed.Add(item: 230400);
+                    posibleSpeed.Add(item: 256000);
+                    posibleSpeed.Add(item: 460800);
+                    posibleSpeed.Add(item: 921600);
+
+                    if (posibleSpeed.Contains(param.Speed))
+                    {
+                        paramSpeed = param.Speed;
+                    }
+                    else
+                    {
+                        paramSpeed = 115200;
+                        Console.WriteLine(value: $"{consola.Prompt}Asignada velocidad {paramSpeed}");
+                    }
+                }
+                else
+                {
+                    paramSpeed = 115200;
+                    Console.WriteLine(value: $"{consola.Prompt}Asignada velocidad {paramSpeed}");
+                }
+                //
+                if (param.Parity == null)
+                {
+                    Console.WriteLine(value: $"{consola.Prompt}No se ha introducido bit de paridad");
+                    // TODO: asignar bit de paridad none
+                }
+                else
+                {
+                    // TODO: veriifcar si el valor introducido está en el enumerado
+                    
+                }
+                //
+
+
+                if (ok)
+                {
+                    SerialCom conexionSerie = new SerialCom();
+                    conexionSerie.Conectar();
+                }
+            }
+
+            if (!param.Help)
+            {
+                param.MostrarAyudaParametros(parser, param);
+            }
         }
     }
 }
