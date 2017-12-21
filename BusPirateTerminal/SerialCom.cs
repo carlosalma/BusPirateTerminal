@@ -72,9 +72,26 @@ namespace BusPirateTerminal
         {
             ComPort = comPort;
             ComSpeed = comSpeed;
-            // TODO: completar la lista de parámetros
+            // TODO: completar la carga de parámetros
+            ComParity = Parity.None;
+            ComBits = 8;
+            ComStopBits = StopBits.One;
+
+            if (!VerificaPuertoComDisponible(comPort))
+            {
+                // Puerto no disponible
+                ComPort = null;
+                ComOk = false;
+            }
+            else
+            {
+                // Puerto disponible
+                ComPort = comPort;
+                ComOk = true;
+            }
         }
 
+        // TODO: Completado el constructor anterior, eliminar este
         /// <summary>
         ///   Configuración manual.
         ///   Hay que introducir todos los parámetros
@@ -109,17 +126,15 @@ namespace BusPirateTerminal
         // Métodos
         //
 
-        
         public bool Conectar()
         {
             Consola consola = new Consola();
-            SerialCom comOk = new SerialCom();
 
-            if (comOk.ComOk)
+            if (ComOk)
             {
-                consola.MsgConexionEstablecida(comOk.ComPort);
+                consola.MsgConexionEstablecida(ComPort);
 
-                using (var serialPort = new SerialPort(comOk.ComPort, comOk.ComSpeed, comOk.ComParity, comOk.ComBits, comOk.ComStopBits))
+                using (var serialPort = new SerialPort(ComPort, ComSpeed, ComParity, ComBits, ComStopBits))
                 {
                     try
                     {
@@ -127,7 +142,7 @@ namespace BusPirateTerminal
                     }
                     catch (System.IO.IOException)
                     {
-                        Console.WriteLine(value: $"{consola.Prompt}Puerto {comOk.ComPort} NO DISPONIBLE");
+                        Console.WriteLine(value: $"{consola.Prompt}Puerto {ComPort} NO DISPONIBLE");
                         //return;
                     }
 
@@ -231,7 +246,7 @@ namespace BusPirateTerminal
         /// <param name="portIni">Número de puerto inicial</param>
         /// <param name="portFin">Número de puerto final</param>
         /// <returns>Numero del puerto localizado</returns>
-        private string BucaPuertoCom(int portIni, int portFin)
+        public string BucaPuertoCom(int portIni, int portFin)
         {
             string _portName = "COM";
             string _portSearch = "";

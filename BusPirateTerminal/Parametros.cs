@@ -45,10 +45,8 @@ namespace BusPirateTerminal
     /// </summary>
     class Parametros
     {
-        enum PosibleParity {Even, Mark, None, Odd, Space };
-
         //
-        #region ParametrosDisponibles
+        #region ParametrosDeEntrada
         //
         private string modo;
         [EnumeratedValueArgument(typeof(string), 'm', "modo",
@@ -65,9 +63,9 @@ namespace BusPirateTerminal
                 "- Modo manual: BusPirateTerminal.exe - m manual -p COM3 -s 115200 -a none -b 8 -i 1")]
         public string Modo { get => modo; set => modo = value; }
         //
-        private string port;
-        [ValueArgument(typeof(string), 'p', "port", Description = "Número de puerto COM")]
-        public string Port { get => port; set => port = value; }
+        private int port;
+        [ValueArgument(typeof(int), 'p', "port", Description = "Número de puerto COM")]
+        public int Port { get => port; set => port = value; }
         //
         private int speed;
         [ValueArgument(typeof(int), 's', "speed", Description = "Velocidad de comunicación en bps")]
@@ -81,9 +79,9 @@ namespace BusPirateTerminal
         [ValueArgument(typeof(int), 'b', "combits", Description = "Número de bits de comunicación")]
         public int Combits { get => combits; set => combits = value; }
         //
-        private StopBits stopbits;
-        [ValueArgument(typeof(StopBits), 'i', "stopbits", Description = "Bit de parada")]
-        public StopBits Stopbits { get => stopbits; set => stopbits = value; }
+        private String stopbits;
+        [ValueArgument(typeof(String), 'i', "stopbits", Description = "Bit de parada")]
+        public String Stopbits { get => stopbits; set => stopbits = value; }
         //
         private bool help;
         [SwitchArgument('h', "help", true, Description = "Esta ayuda")]
@@ -93,11 +91,18 @@ namespace BusPirateTerminal
         [SwitchArgument('v', "version", true, Description = "Versión")]
         public bool Version { get => version; set => version = value; }
         //
-        public string Cabecera { get; }
-        public string Pie { get; }
-        //
         #endregion
         //
+        
+        public string Cabecera { get; }
+        public string Pie { get; }
+        public SerialCom ConexionSerie { get; }
+        // Parámetros de comunicación
+        public string ParamPort;
+        public int ParamSpeed;
+        public string ParamParity;
+        public int ParamComBits;
+        public string ParamStopBits;
 
         //
         // Constructor
@@ -109,6 +114,12 @@ namespace BusPirateTerminal
                 "el interface de 'Bus Pirate'. \n";
 
             Pie = $"Autor: Carlos AlMa - 2017 - ({version}) \n";
+            //
+            ParamPort = "";
+            ParamSpeed = 0;
+            ParamParity = "";
+            ParamComBits = 0;
+            ParamStopBits = "";
         }
 
         //
@@ -149,6 +160,7 @@ namespace BusPirateTerminal
         {
 
             Consola consola = new Consola();
+            // SerialCom conexionSerie = new SerialCom();
 
             // Acceso a los valores de los parámetros
             if (param.Modo == "pirate")
@@ -159,24 +171,35 @@ namespace BusPirateTerminal
 
             if (param.Modo == "manual")
             {
-                bool ok = true;
-                string paramPort = null;
-                int paramSpeed = 0;
+                bool port_ok = true;
                 //
-                if (param.Port == null)
+                if (param.Port > 0)
                 {
-                    Console.WriteLine(value: $"{consola.Prompt}No se ha introducido el número de puerto.");
-                    ok = false;
+                    ParamPort = "COM" + Convert.ToString(param.Port);
+                    // TODO: Verificar si el puerto indicado responde
                 }
                 else
                 {
-                    // TODO: Verificar que la entrada está dentro de rango
-                    // TODO: Conversión a mayusculas si procede
-                    paramPort = param.Port;
+                    int portIni = 0;
+                    int portFin = 13;
+                    string port = null;
+                    port = ConexionSerie.BucaPuertoCom(portIni, portFin);
+                    if (port != null)
+                    {
+                        ParamPort = port;
+                    }
+                    else
+                    {
+                        ParamPort = "NO DISPONIBLE";
+                        Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
+                        port_ok = false;   
+                    }
                 }
                 //
-                if (param.Speed > 0)
+                if (port_ok) // Si el puerto COM esta disponible
                 {
+                    Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
+                    //
                     List<int> posibleSpeed = new List<int>();
                     posibleSpeed.Add(item: 110);
                     posibleSpeed.Add(item: 300);
@@ -202,36 +225,58 @@ namespace BusPirateTerminal
 
                     if (posibleSpeed.Contains(param.Speed))
                     {
-                        paramSpeed = param.Speed;
+                        ParamSpeed = param.Speed;
                     }
                     else
                     {
-                        paramSpeed = 115200;
-                        Console.WriteLine(value: $"{consola.Prompt}Asignada velocidad {paramSpeed}");
+                        ParamSpeed = 115200;
                     }
-                }
-                else
-                {
-                    paramSpeed = 115200;
-                    Console.WriteLine(value: $"{consola.Prompt}Asignada velocidad {paramSpeed}");
-                }
-                //
-                if (param.Parity == null)
-                {
-                    Console.WriteLine(value: $"{consola.Prompt}No se ha introducido bit de paridad");
-                    // TODO: asignar bit de paridad none
-                }
-                else
-                {
-                    // TODO: veriifcar si el valor introducido está en el enumerado
-                    
-                }
-                //
+                    Console.WriteLine(value: $"{consola.Prompt}Velocidad: {ParamSpeed}");
+                    //
+                    List<string> posibleParity = new List<string>();
+                    posibleParity.Add(item: "Even");
+                    posibleParity.Add(item: "Mark");
+                    posibleParity.Add(item: "None");
+                    posibleParity.Add(item: "Odd");
+                    posibleParity.Add(item: "Space");
 
-
-                if (ok)
-                {
-                    SerialCom conexionSerie = new SerialCom();
+                    if (posibleParity.Contains(param.Parity))
+                    {
+                        ParamParity = param.Parity;
+                    }
+                    else
+                    {
+                        ParamParity = "None";
+                    }
+                    Console.WriteLine(value: $"{consola.Prompt}Bit de paridad: {ParamParity}");
+                    //
+                    if (param.Combits > 0)
+                    {
+                        ParamComBits = param.Combits;
+                    }
+                    else
+                    {
+                        ParamComBits = 8;
+                    }
+                    Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamComBits}");
+                    //
+                    List<string> posibleStopBits = new List<string>();
+                    posibleParity.Add(item: "None");
+                    posibleParity.Add(item: "One");
+                    posibleParity.Add(item: "OnePointFive");
+                    posibleParity.Add(item: "Two");
+            
+                    if (posibleParity.Contains(param.Stopbits))
+                    {
+                        ParamStopBits = param.Stopbits;
+                    }
+                    else
+                    {
+                        ParamStopBits = "One";
+                    }
+                    Console.WriteLine(value: $"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
+                    //
+                    SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed);
                     conexionSerie.Conectar();
                 }
             }

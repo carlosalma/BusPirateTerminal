@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consola.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Parametros.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
