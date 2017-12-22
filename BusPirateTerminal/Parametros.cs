@@ -96,7 +96,6 @@ namespace BusPirateTerminal
         
         public string Cabecera { get; }
         public string Pie { get; }
-        public SerialCom ConexionSerie { get; }
         // Parámetros de comunicación
         public string ParamPort;
         public int ParamSpeed;
@@ -160,7 +159,6 @@ namespace BusPirateTerminal
         {
 
             Consola consola = new Consola();
-            // SerialCom conexionSerie = new SerialCom();
 
             // Acceso a los valores de los parámetros
             if (param.Modo == "pirate")
@@ -171,84 +169,20 @@ namespace BusPirateTerminal
 
             if (param.Modo == "manual")
             {
-                bool port_ok = true;
-                //
-                if (param.Port > 0)
+                // Puerto
+                ValidaParamPort(param.Port, 0, 13);
+                Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
+                
+                if (ParamPort != null) // Si el puerto COM esta disponible
                 {
-                    ParamPort = "COM" + Convert.ToString(param.Port);
-                    // TODO: Verificar si el puerto indicado responde
-                }
-                else
-                {
-                    int portIni = 0;
-                    int portFin = 13;
-                    string port = null;
-                    port = ConexionSerie.BucaPuertoCom(portIni, portFin);
-                    if (port != null)
-                    {
-                        ParamPort = port;
-                    }
-                    else
-                    {
-                        ParamPort = "NO DISPONIBLE";
-                        Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
-                        port_ok = false;   
-                    }
-                }
-                //
-                if (port_ok) // Si el puerto COM esta disponible
-                {
-                    Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
-                    //
-                    List<int> posibleSpeed = new List<int>();
-                    posibleSpeed.Add(item: 110);
-                    posibleSpeed.Add(item: 300);
-                    posibleSpeed.Add(item: 600);
-                    posibleSpeed.Add(item: 1200);
-                    posibleSpeed.Add(item: 2400);
-                    posibleSpeed.Add(item: 4800);
-                    posibleSpeed.Add(item: 9600);
-                    posibleSpeed.Add(item: 14400);
-                    posibleSpeed.Add(item: 19200);
-                    posibleSpeed.Add(item: 28800);
-                    posibleSpeed.Add(item: 38400);
-                    posibleSpeed.Add(item: 56000);
-                    posibleSpeed.Add(item: 57600);
-                    posibleSpeed.Add(item: 115200);
-                    posibleSpeed.Add(item: 128000);
-                    posibleSpeed.Add(item: 230400);
-                    posibleSpeed.Add(item: 256000);
-                    posibleSpeed.Add(item: 230400);
-                    posibleSpeed.Add(item: 256000);
-                    posibleSpeed.Add(item: 460800);
-                    posibleSpeed.Add(item: 921600);
-
-                    if (posibleSpeed.Contains(param.Speed))
-                    {
-                        ParamSpeed = param.Speed;
-                    }
-                    else
-                    {
-                        ParamSpeed = 115200;
-                    }
+                    // Velocidad
+                    ValidaParamSpeed(param.Speed);
                     Console.WriteLine(value: $"{consola.Prompt}Velocidad: {ParamSpeed}");
-                    //
-                    List<string> posibleParity = new List<string>();
-                    posibleParity.Add(item: "Even");
-                    posibleParity.Add(item: "Mark");
-                    posibleParity.Add(item: "None");
-                    posibleParity.Add(item: "Odd");
-                    posibleParity.Add(item: "Space");
 
-                    if (posibleParity.Contains(param.Parity))
-                    {
-                        ParamParity = param.Parity;
-                    }
-                    else
-                    {
-                        ParamParity = "None";
-                    }
+                    // Paridad
+                    ValidaParidad(param.Parity);
                     Console.WriteLine(value: $"{consola.Prompt}Bit de paridad: {ParamParity}");
+                    
                     //
                     if (param.Combits > 0)
                     {
@@ -261,12 +195,12 @@ namespace BusPirateTerminal
                     Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamComBits}");
                     //
                     List<string> posibleStopBits = new List<string>();
-                    posibleParity.Add(item: "None");
-                    posibleParity.Add(item: "One");
-                    posibleParity.Add(item: "OnePointFive");
-                    posibleParity.Add(item: "Two");
+                    posibleStopBits.Add(item: "None");
+                    posibleStopBits.Add(item: "One");
+                    posibleStopBits.Add(item: "OnePointFive");
+                    posibleStopBits.Add(item: "Two");
             
-                    if (posibleParity.Contains(param.Stopbits))
+                    if (posibleStopBits.Contains(param.Stopbits))
                     {
                         ParamStopBits = param.Stopbits;
                     }
@@ -276,14 +210,118 @@ namespace BusPirateTerminal
                     }
                     Console.WriteLine(value: $"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
                     //
-                    SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed);
+                    //
+                    SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity);
+                    Console.WriteLine(conexionSerie.MostrarParametros());
                     conexionSerie.Conectar();
+                    //
+                    //
+                }
+                else
+                {
+                    Console.WriteLine(value: $"{consola.Prompt}No hay puerto disponible");
                 }
             }
 
             if (!param.Help)
             {
                 param.MostrarAyudaParametros(parser, param);
+            }
+        }
+
+        /// <summary>
+        ///   Convierte el número de puerto pasado como parámetro
+        ///   en el correspondiente puerto COM.
+        ///   Si no se indica ningún numero de puerto, se realiza
+        ///   un escan de puertos para localizar algúno en uso.
+        /// </summary>
+        /// <param name="paramPort">
+        ///   Número de puerto COM.
+        /// </param>
+        /// <param name="portIni">
+        ///   Número de puerto de inicio al realizar el escan de puertos.
+        /// </param>
+        /// <param name="portFin">
+        ///   Número de puerto final al realizar el escan de puertos.
+        /// </param>
+        public void ValidaParamPort(int paramPort, int portIni, int portFin)
+        {
+            if (paramPort > 0)
+            {
+                ParamPort = "COM" + Convert.ToString(paramPort);                
+            }
+            else
+            {
+                SerialCom conexionSerie = new SerialCom();
+                ParamPort = conexionSerie.BucaPuertoCom(portIni, portFin);
+            }
+        }
+
+        /// <summary>
+        ///   Verifica si la velocidad introducida, se corresponde 
+        ///   con algun valor de los normalizados. En caso contrario
+        ///   se asigna por defecto el valor 115200, que es el 
+        ///   emleado por BusPirate.
+        /// </summary>
+        /// <param name="paramSpeed">
+        ///   Velocidad
+        /// </param>
+        public void ValidaParamSpeed(int paramSpeed)
+        {
+            List<int> posibleSpeed = new List<int>();
+            posibleSpeed.Add(item: 110);
+            posibleSpeed.Add(item: 300);
+            posibleSpeed.Add(item: 600);
+            posibleSpeed.Add(item: 1200);
+            posibleSpeed.Add(item: 2400);
+            posibleSpeed.Add(item: 4800);
+            posibleSpeed.Add(item: 9600);
+            posibleSpeed.Add(item: 14400);
+            posibleSpeed.Add(item: 19200);
+            posibleSpeed.Add(item: 28800);
+            posibleSpeed.Add(item: 38400);
+            posibleSpeed.Add(item: 56000);
+            posibleSpeed.Add(item: 57600);
+            posibleSpeed.Add(item: 115200);
+            posibleSpeed.Add(item: 128000);
+            posibleSpeed.Add(item: 230400);
+            posibleSpeed.Add(item: 256000);
+            posibleSpeed.Add(item: 230400);
+            posibleSpeed.Add(item: 256000);
+            posibleSpeed.Add(item: 460800);
+            posibleSpeed.Add(item: 921600);
+
+            if (posibleSpeed.Contains(paramSpeed))
+            {
+                ParamSpeed = paramSpeed;
+            }
+            else
+            {
+                ParamSpeed = 115200;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="paramParity"></param>
+        public void ValidaParidad(string paramParity)
+        {
+            Console.WriteLine(paramParity);
+            List<string> posibleParity = new List<string>();
+            posibleParity.Add(item: "even");
+            posibleParity.Add(item: "mark");
+            posibleParity.Add(item: "none");
+            posibleParity.Add(item: "odd");
+            posibleParity.Add(item: "space");
+
+            if (posibleParity.Contains(paramParity))
+            {
+                ParamParity = paramParity;
+            }
+            else
+            {
+                ParamParity = "none";
             }
         }
     }

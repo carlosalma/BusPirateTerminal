@@ -68,12 +68,33 @@ namespace BusPirateTerminal
         /// </summary>
         /// <param name="comPort"></param>
         /// <param name="comSpeed"></param>
-        public SerialCom(string comPort, int comSpeed)
+        public SerialCom(string comPort, int comSpeed, string comParity)
         {
             ComPort = comPort;
             ComSpeed = comSpeed;
-            // TODO: completar la carga de parámetros
-            ComParity = Parity.None;
+            //
+            switch (comParity)
+            {
+                case "even":
+                    ComParity = Parity.Even;
+                    break;
+                case "mark":
+                    ComParity = Parity.Mark;
+                    break;
+                case "none":
+                    ComParity = Parity.None;
+                    break;
+                case "odd":
+                    ComParity = Parity.Odd;
+                    break;
+                case "space":
+                    ComParity = Parity.Space;
+                    break;
+                default:
+                    ComParity = Parity.None;
+                    break;
+            }
+            //
             ComBits = 8;
             ComStopBits = StopBits.One;
 
@@ -91,40 +112,16 @@ namespace BusPirateTerminal
             }
         }
 
-        // TODO: Completado el constructor anterior, eliminar este
-        /// <summary>
-        ///   Configuración manual.
-        ///   Hay que introducir todos los parámetros
-        /// </summary>
-        /// <param name="comPort"></param>
-        /// <param name="comSpeed"></param>
-        /// <param name="comParity"></param>
-        /// <param name="comBits"></param>
-        /// <param name="comStopBits"></param>
-        public SerialCom(string comPort, int comSpeed, Parity comParity, int comBits, StopBits comStopBits)
-        {
-            ComSpeed = comSpeed;
-            ComParity = comParity;
-            ComBits = comBits;
-            ComStopBits = comStopBits;
-
-            if (! VerificaPuertoComDisponible(comPort))
-            {
-                // Puerto no disponible
-                ComPort = null;
-                ComOk = false;
-            }
-            else
-            {
-                // Puerto disponible
-                ComPort = comPort;
-                ComOk = true;
-            }
-        }
-
         //
         // Métodos
         //
+
+        public string MostrarParametros()
+        {
+            string listaParametros = $"ComPort: {ComPort}, ComSpeed: {ComSpeed}, " +
+                $"ComParity: {ComParity}, ComBits: {ComBits}, ComStopBits{ComStopBits}";
+            return listaParametros;
+        }
 
         public bool Conectar()
         {
@@ -150,7 +147,9 @@ namespace BusPirateTerminal
                     new Thread(() => ok = EscribirLineasDesde(serialPort)).Start();
 
                     if (!ok)
+                    {
                         Console.WriteLine(value: $"{consola.Prompt}Cerrando consola ...");
+                    }
 
                     while (true)
                     {

@@ -29,7 +29,7 @@ namespace BusPirateTerminal
 
             CommandLineParser.CommandLineParser parser = new CommandLineParser.CommandLineParser();
             Parametros param = new Parametros(consola.Version);
-            
+
             try
             {
                 parser.ExtractArgumentAttributes(param);
@@ -37,6 +37,10 @@ namespace BusPirateTerminal
                 param.SeleccionParametros(parser, param);
             }
             catch (CommandLineException)
+            {
+                param.MostrarAyudaParametros(parser, param);
+            }
+            catch (Exception)
             {
                 param.MostrarAyudaParametros(parser, param);
             }
