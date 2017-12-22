@@ -16,7 +16,6 @@
 //
 using System;
 using CommandLineParser.Arguments;
-using System.IO.Ports;
 using System.Collections.Generic;
 
 // TODO: verificar los textos con las definiciones de los parámetros de comunicación.
@@ -75,13 +74,13 @@ namespace BusPirateTerminal
         [ValueArgument(typeof(String), 'a', "parity", Description = "Bit de paridad")]
         public String Parity { get => parity; set => parity = value; }
         //
-        private int combits;
+        private int dataBits;
         [ValueArgument(typeof(int), 'b', "combits", Description = "Número de bits de comunicación")]
-        public int Combits { get => combits; set => combits = value; }
+        public int DataBits { get => dataBits; set => dataBits = value; }
         //
-        private String stopbits;
+        private String stopBits;
         [ValueArgument(typeof(String), 'i', "stopbits", Description = "Bit de parada")]
-        public String Stopbits { get => stopbits; set => stopbits = value; }
+        public String StopBits { get => stopBits; set => stopBits = value; }
         //
         private bool help;
         [SwitchArgument('h', "help", true, Description = "Esta ayuda")]
@@ -100,7 +99,7 @@ namespace BusPirateTerminal
         public string ParamPort;
         public int ParamSpeed;
         public string ParamParity;
-        public int ParamComBits;
+        public int ParamDataBits;
         public string ParamStopBits;
 
         //
@@ -117,7 +116,7 @@ namespace BusPirateTerminal
             ParamPort = "";
             ParamSpeed = 0;
             ParamParity = "";
-            ParamComBits = 0;
+            ParamDataBits = 0;
             ParamStopBits = "";
         }
 
@@ -183,16 +182,10 @@ namespace BusPirateTerminal
                     ValidaParidad(param.Parity);
                     Console.WriteLine(value: $"{consola.Prompt}Bit de paridad: {ParamParity}");
                     
-                    //
-                    if (param.Combits > 0)
-                    {
-                        ParamComBits = param.Combits;
-                    }
-                    else
-                    {
-                        ParamComBits = 8;
-                    }
-                    Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamComBits}");
+                    // Bits de datos
+                    ValidaDataBits(param.DataBits);
+                    Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamDataBits}");
+                    
                     //
                     List<string> posibleStopBits = new List<string>();
                     posibleStopBits.Add(item: "None");
@@ -200,9 +193,9 @@ namespace BusPirateTerminal
                     posibleStopBits.Add(item: "OnePointFive");
                     posibleStopBits.Add(item: "Two");
             
-                    if (posibleStopBits.Contains(param.Stopbits))
+                    if (posibleStopBits.Contains(param.StopBits))
                     {
-                        ParamStopBits = param.Stopbits;
+                        ParamStopBits = param.StopBits;
                     }
                     else
                     {
@@ -259,8 +252,8 @@ namespace BusPirateTerminal
 
         /// <summary>
         ///   Verifica si la velocidad introducida, se corresponde 
-        ///   con algun valor de los normalizados. En caso contrario
-        ///   se asigna por defecto el valor 115200, que es el 
+        ///   con algun valor normalizado. En caso contrario se
+        ///   asigna por defecto el valor 115200, que es el 
         ///   emleado por BusPirate.
         /// </summary>
         /// <param name="paramSpeed">
@@ -302,12 +295,16 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        /// 
+        ///   Verifica si la paridad introducida, se corresponde 
+        ///   con algun valor normalizado. En caso contrario se
+        ///   asigna por defecto el valor none, que es el 
+        ///   emleado por BusPirate.
         /// </summary>
-        /// <param name="paramParity"></param>
+        /// <param name="paramParity">
+        ///   TODO: Cmpletar
+        /// </param>
         public void ValidaParidad(string paramParity)
         {
-            Console.WriteLine(paramParity);
             List<string> posibleParity = new List<string>();
             posibleParity.Add(item: "even");
             posibleParity.Add(item: "mark");
@@ -322,6 +319,31 @@ namespace BusPirateTerminal
             else
             {
                 ParamParity = "none";
+            }
+        }
+
+        /// <summary>
+        ///   Verifica si el numero de bits de datos, se corresponde 
+        ///   con algun valor normalizado. En caso contrario se asigna 
+        ///   por defecto el valor 8, que es el emleado por BusPirate.
+        /// </summary>
+        /// <param name="paramDataBits">
+        ///   TODO: Completar
+        /// </param>
+        public void ValidaDataBits(int paramDataBits)
+        {
+            List<int> posibleDataBits = new List<int>();
+            posibleDataBits.Add(item: 5);
+            posibleDataBits.Add(item: 7);
+            posibleDataBits.Add(item: 8);
+
+            if (posibleDataBits.Contains(paramDataBits))
+            {
+                ParamDataBits = paramDataBits;
+            }
+            else
+            {
+                ParamDataBits = 8;
             }
         }
     }

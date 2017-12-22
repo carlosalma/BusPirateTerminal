@@ -32,7 +32,7 @@ namespace BusPirateTerminal
         public string ComPort { get; set; }
         public int ComSpeed { get; set; }
         public Parity ComParity { get; set; }
-        public int ComBits { get; set; }
+        public int ComDataBits { get; set; }
         public StopBits ComStopBits { get; set; }
         public bool ComOk { get; set; }
         
@@ -49,7 +49,7 @@ namespace BusPirateTerminal
         {
             ComSpeed = 115200;
             ComParity = Parity.None;
-            ComBits = 8;
+            ComDataBits = 8;
             ComStopBits = StopBits.One;
             //
             ComPort = BucaPuertoCom(portIni: 1, portFin: 9);
@@ -95,7 +95,7 @@ namespace BusPirateTerminal
                     break;
             }
             //
-            ComBits = 8;
+            ComDataBits = 8;
             ComStopBits = StopBits.One;
 
             if (!VerificaPuertoComDisponible(comPort))
@@ -119,7 +119,7 @@ namespace BusPirateTerminal
         public string MostrarParametros()
         {
             string listaParametros = $"ComPort: {ComPort}, ComSpeed: {ComSpeed}, " +
-                $"ComParity: {ComParity}, ComBits: {ComBits}, ComStopBits{ComStopBits}";
+                $"ComParity: {ComParity}, ComBits: {ComDataBits}, ComStopBits{ComStopBits}";
             return listaParametros;
         }
 
@@ -131,7 +131,7 @@ namespace BusPirateTerminal
             {
                 consola.MsgConexionEstablecida(ComPort);
 
-                using (var serialPort = new SerialPort(ComPort, ComSpeed, ComParity, ComBits, ComStopBits))
+                using (var serialPort = new SerialPort(ComPort, ComSpeed, ComParity, ComDataBits, ComStopBits))
                 {
                     try
                     {
@@ -211,7 +211,7 @@ namespace BusPirateTerminal
         {
             bool ok = true;
 
-            using (var serialPort = new SerialPort(comPort, ComSpeed, ComParity, ComBits, ComStopBits))
+            using (var serialPort = new SerialPort(comPort, ComSpeed, ComParity, ComDataBits, ComStopBits))
             {
                 try
                 {
