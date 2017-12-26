@@ -18,13 +18,11 @@ using System.IO.Ports;
 using System;
 using System.Threading;
 
-// TODO: Convertir en parámetro el rango de puertos a escanear en el método SerialCom()
 
 namespace BusPirateTerminal
 {
     class SerialCom
     {
-
         //
         // Propiedades
         //
@@ -35,44 +33,64 @@ namespace BusPirateTerminal
         public int ComDataBits { get; set; }
         public StopBits ComStopBits { get; set; }
         public bool ComOk { get; set; }
-        
+        public int PortIni { get; set; }
+        public int PortFin { get; set; }
+
         //
         // Constructores
         //
-
+        
+        //
+        #region Constructores
+        //
         /// <summary>
         ///   Auto configuración para BusPirate.
         ///   Dispone de todos los parámetros por defecto
         ///   y localiza el puerto COM empleado.
         /// </summary>
-        public SerialCom()
+        public SerialCom(int portIni, int portFin)
         {
             ComSpeed = 115200;
             ComParity = Parity.None;
             ComDataBits = 8;
             ComStopBits = StopBits.One;
+            ComOk = true;
+            PortIni = portIni;
+            PortFin = portFin;
             //
-            ComPort = BucaPuertoCom(portIni: 1, portFin: 9);
+            ComPort = BucaPuertoCom();
             if (ComPort == null)
             {
                 ComOk = false;
-            }
-            else
-            {
-                ComOk = true;
             }
         }
 
         /// <summary>
         ///   Entrada de parámetros de comunicación via parámetro.
         /// </summary>
-        /// <param name="comPort"></param>
-        /// <param name="comSpeed"></param>
-        public SerialCom(string comPort, int comSpeed, string comParity)
+        /// <param name="comPort">
+        ///   Número de puerto COM.
+        /// </param>
+        /// <param name="comSpeed">
+        ///   Velocidad de comunicación.
+        /// </param>
+        /// <param name="comParity">
+        ///   Bit de paridad
+        /// </param>
+        /// <param name="comDataBits">
+        ///   Número de bits de datos
+        /// </param>
+        /// <param name="comStopBits">
+        ///   Número de bits de parada
+        /// </param>
+        public SerialCom(string comPort, int comSpeed, string comParity, int comDataBits, string comStopBits)
         {
             ComPort = comPort;
             ComSpeed = comSpeed;
-            //
+            ComDataBits = comDataBits;
+            ComOk = true;
+
+            // Acopla los parámetros de paridad
             switch (comParity)
             {
                 case "even":
@@ -94,9 +112,26 @@ namespace BusPirateTerminal
                     ComParity = Parity.None;
                     break;
             }
-            //
-            ComDataBits = 8;
-            ComStopBits = StopBits.One;
+            
+            // Acopla los parámetors de bits de parada
+            switch (comStopBits)
+            {
+                case "none":
+                    ComStopBits = StopBits.None;
+                    break;
+                case "one":
+                    ComStopBits = StopBits.One;
+                    break;
+                case "onepointfive":
+                    ComStopBits = StopBits.OnePointFive;
+                    break;
+                case "two":
+                    ComStopBits = StopBits.Two;
+                    break;
+                default:
+                    ComStopBits = StopBits.One;
+                    break;
+            }
 
             if (!VerificaPuertoComDisponible(comPort))
             {
@@ -104,25 +139,39 @@ namespace BusPirateTerminal
                 ComPort = null;
                 ComOk = false;
             }
-            else
-            {
-                // Puerto disponible
-                ComPort = comPort;
-                ComOk = true;
-            }
         }
+        //
+        #endregion
+        //
 
         //
         // Métodos
         //
 
+        /// <summary>
+        ///   Muestra los parámetros que se han empleado para 
+        ///   establecer la comunicación.
+        /// </summary>
+        /// <returns>
+        ///   Información sobre los parámetros
+        /// </returns>
         public string MostrarParametros()
         {
-            string listaParametros = $"ComPort: {ComPort}, ComSpeed: {ComSpeed}, " +
-                $"ComParity: {ComParity}, ComBits: {ComDataBits}, ComStopBits{ComStopBits}";
+            string listaParametros = $"Parámetros de la conexión: \n" +
+                $" - ComPort: {ComPort} \n" +
+                $" - ComSpeed: {ComSpeed} \n" +
+                $" - ComParity: {ComParity} \n" +
+                $" - ComBits: {ComDataBits} \n" +
+                $" - ComStopBits{ComStopBits}";
             return listaParametros;
         }
 
+        /// <summary>
+        ///  Establece el proceso de comunicación
+        /// </summary>
+        /// <returns>
+        ///   TODO: Completar
+        /// </returns>
         public bool Conectar()
         {
             Consola consola = new Consola();
@@ -133,6 +182,8 @@ namespace BusPirateTerminal
 
                 using (var serialPort = new SerialPort(ComPort, ComSpeed, ComParity, ComDataBits, ComStopBits))
                 {
+                    bool ok = true;
+
                     try
                     {
                         serialPort.Open();
@@ -143,8 +194,7 @@ namespace BusPirateTerminal
                         //return;
                     }
 
-                    bool ok = true;
-                    new Thread(() => ok = EscribirLineasDesde(serialPort)).Start();
+                    new Thread(() => ok = RespuestaDsipositivoCOM(serialPort, consola)).Start();
 
                     if (!ok)
                     {
@@ -159,14 +209,17 @@ namespace BusPirateTerminal
                         try
                         {
                             if ((command == "quit") || (command == "QUIT"))
+                            {
                                 break;
+                            }
 
+                            // Envia el comando mediante el puerto serie
                             serialPort.WriteLine(command);
+                            //
                         }
                         catch (Exception e)
                         {
                             Console.WriteLine(value: $"{consola.Prompt} {e}");
-                            // return;
                         }
                     }
                 }
@@ -175,7 +228,6 @@ namespace BusPirateTerminal
             {
                 Console.WriteLine(value: $"{consola.Prompt}Conexión: NO ESTABLECIDA");
             }
-
             return true;
         }
 
@@ -186,14 +238,22 @@ namespace BusPirateTerminal
         /// <param name="comPort">
         ///   Puerto COM empleado
         /// </param>
-        /// <returns></returns>
-        private bool EscribirLineasDesde(SerialPort comPort)
+        /// <returns>
+        ///   TODO: Completar
+        /// </returns>
+        private bool RespuestaDsipositivoCOM(SerialPort comPort, Consola consola)
         {
             bool ok = true;
 
             try
             {
-                while (true) Console.WriteLine(comPort.ReadLine());
+                string comRead = null;
+            
+                while (true)
+                {
+                    comRead = comPort.ReadLine();
+                    Console.WriteLine(comRead);
+                }
             }
             catch (Exception)
             {
@@ -205,8 +265,12 @@ namespace BusPirateTerminal
         /// <summary>
         ///   Verifica si la conexión con el puerto COM está disponible.
         /// </summary>
-        /// <param name="comPort"></param>
-        /// <returns>Conexión disponible</returns>
+        /// <param name="comPort">
+        ///   Puerto COM a verificar
+        /// </param>
+        /// <returns>
+        ///   Conexión disponible.
+        /// </returns>
         private bool VerificaPuertoComDisponible(string comPort)
         {
             bool ok = true;
@@ -242,17 +306,17 @@ namespace BusPirateTerminal
         /// <summary>
         ///   Busca el puerto COM disponible dentro de un rango dado.
         /// </summary>
-        /// <param name="portIni">Número de puerto inicial</param>
-        /// <param name="portFin">Número de puerto final</param>
-        /// <returns>Numero del puerto localizado</returns>
-        public string BucaPuertoCom(int portIni, int portFin)
+        /// <returns>
+        ///   Número del puerto localizado.
+        /// </returns>
+        public string BucaPuertoCom()
         {
             string _portName = "COM";
             string _portSearch = "";
             string _puertoLocalizado = null;
             bool _portOk = false;
 
-            for (int port = portIni; port <= portFin; port++)
+            for (int port = PortIni; port <= PortFin; port++)
             {
                 _portSearch = _portName + port.ToString();
                 _portOk = VerificaPuertoComDisponible(_portSearch);

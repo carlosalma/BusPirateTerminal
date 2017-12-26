@@ -18,24 +18,8 @@ using System;
 using CommandLineParser.Arguments;
 using System.Collections.Generic;
 
-// TODO: verificar los textos con las definiciones de los parámetros de comunicación.
 // TODO: traducir los textos.
 // TODO: sacar los textos de esta clase
-
-// TODO: Anadir al texto de ayuda
-/* Paridad
-Even - Establece el bit de paridad para que el recuento de bits definidos es un número par.
-Mark - Deja el bit de paridad que se establece en 1.
-None - Se produce ninguna comprobación de paridad.
-Odd - Establece el bit de paridad para que el recuento de bits establecidos sea un número impar.
-Space - Deja el bit de paridad establecido en 0.
-*/
-
-// TODO: Anadir al texto de ayuda
-/* Velocidad
-110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000, 57600, 115200, 128000, 153600, 230400, 256000, 230400, 256000, 460800, 921600
-*/
-
 
 namespace BusPirateTerminal
 {
@@ -46,21 +30,6 @@ namespace BusPirateTerminal
     {
         //
         #region ParametrosDeEntrada
-        //
-        private string modo;
-        [EnumeratedValueArgument(typeof(string), 'm', "modo",
-            AllowedValues = "pirate;manual",
-            Description =
-                "Modos de configuración: <pirate> auto-configuración, <manual> configuración manual.",
-            IgnoreCase = true,
-            FullDescription =
-                "Existen dos modos de configuración, el modo 'pirate' que configura automáticamente \n " +
-                "los parámetros de comunicación con 'Bus Pirate' y el modo 'manual', que requiere \n " +
-                "de la introducción de todos los parámetros de comunicación.",
-            Example = "\n" +
-                "- Modo automático: BusPirateTerminal.exe -m pirate \n" +
-                "- Modo manual: BusPirateTerminal.exe - m manual -p COM3 -s 115200 -a none -b 8 -i 1")]
-        public string Modo { get => modo; set => modo = value; }
         //
         private int port;
         [ValueArgument(typeof(int), 'p', "port", Description = "Número de puerto COM")]
@@ -82,17 +51,17 @@ namespace BusPirateTerminal
         [ValueArgument(typeof(String), 'i', "stopbits", Description = "Bit de parada")]
         public String StopBits { get => stopBits; set => stopBits = value; }
         //
-        private bool help;
-        [SwitchArgument('h', "help", true, Description = "Esta ayuda")]
-        public bool Help { get => help; set => help = value; }
+        private bool info;
+        [SwitchArgument('f', "info", false, Description = "Información sobre los parámetros de la conexión.")]
+        public bool Info { get => info; set => info = value; }
         //
-        private bool version;
-        [SwitchArgument('v', "version", true, Description = "Versión")]
-        public bool Version { get => version; set => version = value; }
+        private bool help;
+        [SwitchArgument('h', "help", true, Description = "Esta ayuda.")]
+        public bool Help { get => help; set => help = value; }
         //
         #endregion
         //
-        
+
         public string Cabecera { get; }
         public string Pie { get; }
         // Parámetros de comunicación
@@ -108,16 +77,46 @@ namespace BusPirateTerminal
         public Parametros(string version)
         {
             Cabecera = "\n" +
-                "Mini terminal de puerto serie que permite establecer comunicación con \n" +
-                "el interface de 'Bus Pirate'. \n";
+                "Terminal de comunicación via puerto serie (COM), orientado a la comunicación \n" +
+                "con el dispositivo 'Pirate Bus' de 'SparkFun'. \n\n" +
 
-            Pie = $"Autor: Carlos AlMa - 2017 - ({version}) \n";
+                "Existen dos modos de empleo: \n\n" +
+
+                "- Modo automático (sin parámetros), el terminal se configura con los parámetros \n" +
+                "  por defecto necesarios y, localiza el puerto COM al que se ha conectado el \n" +
+                "  dispositivo. \n\n" +
+
+                "- Modo manual, es necesario introducir los parámetros de comunicación manualmente. \n" +
+                "  Si se omite un parámetro, este se sustituye por el valor por defecto. \n\n" +
+
+                "Ejemplos: \n\n" +
+
+                "- Modo automático: BusPirateTerminal.exe \n" +
+                "- Modo manual: BusPirateTerminal.exe -p 3 -s 115200 -a none -b 8 -i one" +
+                "\n";
+
+            Pie = $"\n" +
+                "Velocidades de comunicación: \n" +
+                "  110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000, \n" +
+                "  57600, 115200, 128000, 153600, 230400, 256000, 230400, 256000, 460800, 921600 \n\n" +
+        
+                "Bits de paridad: \n" +
+                "- Even:  Establece el bit de paridad para que el recuento de bits definidos es un número par. \n" +
+                "- Mark:  Deja el bit de paridad que se establece en 1. \n" +
+                "- None:  Se produce ninguna comprobación de paridad. \n" +
+                "- Odd:   Establece el bit de paridad para que el recuento de bits establecidos sea un número impar. \n" +
+                "- Space: Deja el bit de paridad establecido en 0. \n\n" +
+
+                "Bits de datos: 5, 7, 8 \n\n" +
+                "Bits de parada: none, one, onepointfive, two \n\n" +
+
+                $"Autor: Carlos AlMa - 2017 - ({version}) \n";
             //
             ParamPort = "";
-            ParamSpeed = 0;
-            ParamParity = "";
-            ParamDataBits = 0;
-            ParamStopBits = "";
+            ParamSpeed = 115200;
+            ParamParity = "none";
+            ParamDataBits = 8;
+            ParamStopBits = "one";
         }
 
         //
@@ -148,77 +147,56 @@ namespace BusPirateTerminal
         ///   o muestra mensajes de error.
         /// </summary>
         /// <param name="parser">
-        ///   Parser, analiza los parámetros pasados por línea
-        ///   de comandos.
+        ///   Analiza los parámetros pasados por línea de comandos.
         /// </param>
         /// <param name="param">
-        ///   Parámetros ppasados por línea de comandos
+        ///   Parámetros pasados por línea de comandos.
         /// </param>
         public void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
-
             Consola consola = new Consola();
+            var noHelp = false;
 
-            // Acceso a los valores de los parámetros
-            if (param.Modo == "pirate")
+            if (param.help)
             {
-                SerialCom conexionSerie = new SerialCom();
-                conexionSerie.Conectar();
-            }
-
-            if (param.Modo == "manual")
-            {
-                // Puerto
                 ValidaParamPort(param.Port, 0, 13);
                 Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
-                
-                if (ParamPort != null) // Si el puerto COM esta disponible
-                {
-                    // Velocidad
-                    ValidaParamSpeed(param.Speed);
-                    Console.WriteLine(value: $"{consola.Prompt}Velocidad: {ParamSpeed}");
-
-                    // Paridad
-                    ValidaParidad(param.Parity);
-                    Console.WriteLine(value: $"{consola.Prompt}Bit de paridad: {ParamParity}");
-                    
-                    // Bits de datos
-                    ValidaDataBits(param.DataBits);
-                    Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamDataBits}");
-                    
-                    //
-                    List<string> posibleStopBits = new List<string>();
-                    posibleStopBits.Add(item: "None");
-                    posibleStopBits.Add(item: "One");
-                    posibleStopBits.Add(item: "OnePointFive");
-                    posibleStopBits.Add(item: "Two");
-            
-                    if (posibleStopBits.Contains(param.StopBits))
-                    {
-                        ParamStopBits = param.StopBits;
-                    }
-                    else
-                    {
-                        ParamStopBits = "One";
-                    }
-                    Console.WriteLine(value: $"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
-                    //
-                    //
-                    SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity);
-                    Console.WriteLine(conexionSerie.MostrarParametros());
-                    conexionSerie.Conectar();
-                    //
-                    //
-                }
-                else
-                {
-                    Console.WriteLine(value: $"{consola.Prompt}No hay puerto disponible");
-                }
+                noHelp = true;
             }
-
-            if (!param.Help)
+            else
             {
                 param.MostrarAyudaParametros(parser, param);
+            }
+
+            if ((ParamPort != null) && (noHelp))
+            {
+                // Velocidad
+                ValidaParamSpeed(param.Speed);
+                Console.WriteLine(value: $"{consola.Prompt}Velocidad: {ParamSpeed}");
+
+                // Paridad
+                ValidaParidad(param.Parity);
+                Console.WriteLine(value: $"{consola.Prompt}Bit de paridad: {ParamParity}");
+
+                // Bits de datos
+                ValidaDataBits(param.DataBits);
+                Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamDataBits}");
+
+                // Bits de parada
+                ValidaStopBits(param.StopBits);
+                Console.WriteLine(value: $"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
+
+                // Conexión
+                SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity, ParamDataBits, ParamStopBits);
+                if (param.Info)
+                {
+                    Console.WriteLine(value: $"{consola.Prompt}{conexionSerie.MostrarParametros()}");
+                }
+                conexionSerie.Conectar();
+            }
+            else if (noHelp)
+            {
+                Console.WriteLine(value: $"{consola.Prompt}No hay puerto disponible");
             }
         }
 
@@ -245,19 +223,19 @@ namespace BusPirateTerminal
             }
             else
             {
-                SerialCom conexionSerie = new SerialCom();
-                ParamPort = conexionSerie.BucaPuertoCom(portIni, portFin);
+                SerialCom conexionSerie = new SerialCom(portIni, portFin);
+                ParamPort = conexionSerie.BucaPuertoCom();
             }
         }
 
         /// <summary>
         ///   Verifica si la velocidad introducida, se corresponde 
         ///   con algun valor normalizado. En caso contrario se
-        ///   asigna por defecto el valor 115200, que es el 
+        ///   asigna por defecto el valor "115200", que es el 
         ///   emleado por BusPirate.
         /// </summary>
         /// <param name="paramSpeed">
-        ///   Velocidad
+        ///   Velocidad de comunicación.
         /// </param>
         public void ValidaParamSpeed(int paramSpeed)
         {
@@ -283,25 +261,21 @@ namespace BusPirateTerminal
             posibleSpeed.Add(item: 256000);
             posibleSpeed.Add(item: 460800);
             posibleSpeed.Add(item: 921600);
-
+            
             if (posibleSpeed.Contains(paramSpeed))
             {
                 ParamSpeed = paramSpeed;
-            }
-            else
-            {
-                ParamSpeed = 115200;
             }
         }
 
         /// <summary>
         ///   Verifica si la paridad introducida, se corresponde 
         ///   con algun valor normalizado. En caso contrario se
-        ///   asigna por defecto el valor none, que es el 
+        ///   asigna por defecto el valor "none", que es el 
         ///   emleado por BusPirate.
         /// </summary>
         /// <param name="paramParity">
-        ///   TODO: Cmpletar
+        ///   Bit de paridad
         /// </param>
         public void ValidaParidad(string paramParity)
         {
@@ -316,19 +290,15 @@ namespace BusPirateTerminal
             {
                 ParamParity = paramParity;
             }
-            else
-            {
-                ParamParity = "none";
-            }
         }
 
         /// <summary>
-        ///   Verifica si el numero de bits de datos, se corresponde 
+        ///   Verifica si el número de bits de datos, se corresponde 
         ///   con algun valor normalizado. En caso contrario se asigna 
-        ///   por defecto el valor 8, que es el emleado por BusPirate.
+        ///   por defecto el valor "8", que es el emleado por BusPirate.
         /// </summary>
         /// <param name="paramDataBits">
-        ///   TODO: Completar
+        ///   Número de bits de datos
         /// </param>
         public void ValidaDataBits(int paramDataBits)
         {
@@ -336,14 +306,32 @@ namespace BusPirateTerminal
             posibleDataBits.Add(item: 5);
             posibleDataBits.Add(item: 7);
             posibleDataBits.Add(item: 8);
-
+            
             if (posibleDataBits.Contains(paramDataBits))
             {
                 ParamDataBits = paramDataBits;
             }
-            else
+        }
+
+        /// <summary>
+        ///   Verifica si el numero de bits de parada, se corresponde 
+        ///   con algun valor normalizado. En caso contrario se asigna 
+        ///   por defecto el valor "one", que es el emleado por BusPirate.
+        /// </summary>
+        /// <param name="paramStopBits">
+        ///   Número de bits de parada
+        /// </param>
+        public void ValidaStopBits(string paramStopBits)
+        {
+            List<string> posibleStopBits = new List<string>();
+            posibleStopBits.Add(item: "none");
+            posibleStopBits.Add(item: "one");
+            posibleStopBits.Add(item: "onepointfive");
+            posibleStopBits.Add(item: "two");
+
+            if (posibleStopBits.Contains(paramStopBits))
             {
-                ParamDataBits = 8;
+                ParamStopBits = paramStopBits;
             }
         }
     }
