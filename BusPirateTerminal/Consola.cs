@@ -12,8 +12,7 @@ namespace BusPirateTerminal
         public Consola()
         {
             Prompt = "::> ";
-            // PromptPB = "HiZ>";
-            Version = "0.2";
+            Version = "0.3";
             ColorTexto = ConsoleColor.Red;
         }
 

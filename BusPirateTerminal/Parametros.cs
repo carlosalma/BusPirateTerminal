@@ -18,9 +18,6 @@ using System;
 using CommandLineParser.Arguments;
 using System.Collections.Generic;
 
-// TODO: traducir los textos.
-// TODO: sacar los textos de esta clase
-
 namespace BusPirateTerminal
 {
     /// <summary>

@@ -45,8 +45,9 @@ namespace BusPirateTerminal
         //
         /// <summary>
         ///   Auto configuración para BusPirate.
-        ///   Dispone de todos los parámetros por defecto
-        ///   y localiza el puerto COM empleado.
+        ///   Dispone de todos los parámetros para establecer
+        ///   la comunicación, excepto el puerto COM empleado, 
+        ///   que lo localiza.
         /// </summary>
         public SerialCom(int portIni, int portFin)
         {
@@ -66,7 +67,7 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///   Entrada de parámetros de comunicación via parámetro.
+        ///   Permite establecer los parámetros de comunicación.
         /// </summary>
         /// <param name="comPort">
         ///   Número de puerto COM.
@@ -162,17 +163,14 @@ namespace BusPirateTerminal
                 $" - ComSpeed: {ComSpeed} \n" +
                 $" - ComParity: {ComParity} \n" +
                 $" - ComBits: {ComDataBits} \n" +
-                $" - ComStopBits{ComStopBits}";
+                $" - ComStopBits: {ComStopBits}";
             return listaParametros;
         }
 
         /// <summary>
-        ///  Establece el proceso de comunicación
+        ///   Establece el proceso de comunicación
         /// </summary>
-        /// <returns>
-        ///   TODO: Completar
-        /// </returns>
-        public bool Conectar()
+        public void Conectar()
         {
             Consola consola = new Consola();
 
@@ -183,6 +181,7 @@ namespace BusPirateTerminal
                 using (var serialPort = new SerialPort(ComPort, ComSpeed, ComParity, ComDataBits, ComStopBits))
                 {
                     bool ok = true;
+                    string command = null;
 
                     try
                     {
@@ -191,7 +190,6 @@ namespace BusPirateTerminal
                     catch (System.IO.IOException)
                     {
                         Console.WriteLine(value: $"{consola.Prompt}Puerto {ComPort} NO DISPONIBLE");
-                        //return;
                     }
 
                     new Thread(() => ok = RespuestaDsipositivoCOM(serialPort, consola)).Start();
@@ -203,19 +201,18 @@ namespace BusPirateTerminal
 
                     while (true)
                     {
-                        Console.Write(value: consola.Prompt);
-                        var command = Console.ReadLine();
+                        command = Console.ReadLine();
 
                         try
                         {
+                            // Condición de salida del terminal
                             if ((command == "quit") || (command == "QUIT"))
                             {
                                 break;
                             }
-
-                            // Envia el comando mediante el puerto serie
+                            // Envía el comando introducido en el 
+                            // terminal vía puerto serie.
                             serialPort.WriteLine(command);
-                            //
                         }
                         catch (Exception e)
                         {
@@ -228,7 +225,6 @@ namespace BusPirateTerminal
             {
                 Console.WriteLine(value: $"{consola.Prompt}Conexión: NO ESTABLECIDA");
             }
-            return true;
         }
 
         /// <summary>
@@ -239,7 +235,7 @@ namespace BusPirateTerminal
         ///   Puerto COM empleado
         /// </param>
         /// <returns>
-        ///   TODO: Completar
+        ///   true, si no hay problemas en el proceso.
         /// </returns>
         private bool RespuestaDsipositivoCOM(SerialPort comPort, Consola consola)
         {
@@ -247,13 +243,9 @@ namespace BusPirateTerminal
 
             try
             {
-                string comRead = null;
-            
-                while (true)
-                {
-                    comRead = comPort.ReadLine();
-                    Console.WriteLine(comRead);
-                }
+                // Escribe en el terminal la respuesta
+                // recibida vía puerto serie
+                while (true) Console.WriteLine(comPort.ReadLine());
             }
             catch (Exception)
             {
