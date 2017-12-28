@@ -52,8 +52,12 @@ namespace BusPirateTerminal
         [SwitchArgument('f', "info", false, Description = "Información sobre los parámetros de la conexión.")]
         public bool Info { get => info; set => info = value; }
         //
+        private bool listCom;
+        [SwitchArgument('l', "list", false, Description = "Listado de puertos COM disponibles.")]
+        public bool ListCom { get => listCom; set => listCom = value; }
+        //
         private bool help;
-        [SwitchArgument('h', "help", true, Description = "Esta ayuda.")]
+        [SwitchArgument('h', "help", false, Description = "Esta ayuda.")]
         public bool Help { get => help; set => help = value; }
         //
         #endregion
@@ -152,21 +156,30 @@ namespace BusPirateTerminal
         public void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
             Consola consola = new Consola();
-            var noHelp = false;
 
-            if (param.help)
-            {
-                ValidaParamPort(param.Port, 0, 13);
-                Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
-                noHelp = true;
-            }
-            else
+            // Ayuda
+            if (param.Help)
             {
                 param.MostrarAyudaParametros(parser, param);
             }
 
-            if ((ParamPort != null) && (noHelp))
+            // Listado de puertos
+            if (param.ListCom)
             {
+                SerialCom conexionSerie = new SerialCom();
+                string puertosDisponibles = conexionSerie.ListarPuertosDisponibles();
+                Console.WriteLine(value: $"{consola.Prompt}{puertosDisponibles}");
+            }
+
+            if ((ParamPort != null) && (! param.Help) && (! param.ListCom))
+            {
+                // TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM
+                // TODO: Verificar el funcionamimento del listado de puertos en Windows
+                // TODO: Emplear el listado de puertos como argumento para la verificación y asignación en lugar de emplear un rango de posibles valores
+                // Puerto
+                ValidaParamPort(param.Port, 0, 13);
+                Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
+
                 // Velocidad
                 ValidaParamSpeed(param.Speed);
                 Console.WriteLine(value: $"{consola.Prompt}Velocidad: {ParamSpeed}");
@@ -183,17 +196,13 @@ namespace BusPirateTerminal
                 ValidaStopBits(param.StopBits);
                 Console.WriteLine(value: $"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
 
-                // Conexión
+                // >>> CONEXIÓN <<<
                 SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity, ParamDataBits, ParamStopBits);
                 if (param.Info)
                 {
                     Console.WriteLine(value: $"{consola.Prompt}{conexionSerie.MostrarParametros()}");
                 }
                 conexionSerie.Conectar();
-            }
-            else if (noHelp)
-            {
-                Console.WriteLine(value: $"{consola.Prompt}No hay puerto disponible");
             }
         }
 

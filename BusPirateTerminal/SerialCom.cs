@@ -1,4 +1,4 @@
-﻿//
+//
 // SerialCom.cs: Comunicaciones mediante puerto serie.
 //
 // Authors:
@@ -35,6 +35,7 @@ namespace BusPirateTerminal
         public bool ComOk { get; set; }
         public int PortIni { get; set; }
         public int PortFin { get; set; }
+        //public SerialPort ComPort { get; set; }
 
         //
         // Constructores
@@ -43,6 +44,15 @@ namespace BusPirateTerminal
         //
         #region Constructores
         //
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SerialCom()
+        {
+            
+        }
+
         /// <summary>
         ///   Auto configuración para BusPirate.
         ///   Dispone de todos los parámetros para establecer
@@ -58,7 +68,7 @@ namespace BusPirateTerminal
             ComOk = true;
             PortIni = portIni;
             PortFin = portFin;
-            //
+
             ComPort = BucaPuertoCom();
             if (ComPort == null)
             {
@@ -150,6 +160,7 @@ namespace BusPirateTerminal
         //
 
         /// <summary>
+<<<<<<< HEAD
         ///   Muestra los parámetros que se han empleado para 
         ///   establecer la comunicación.
         /// </summary>
@@ -169,6 +180,9 @@ namespace BusPirateTerminal
 
         /// <summary>
         ///   Establece el proceso de comunicación
+=======
+        ///  Establece el proceso de comunicación
+>>>>>>> cf8ab40... Añadir listador de puertos COM
         /// </summary>
         public void Conectar()
         {
@@ -255,47 +269,6 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///   Verifica si la conexión con el puerto COM está disponible.
-        /// </summary>
-        /// <param name="comPort">
-        ///   Puerto COM a verificar
-        /// </param>
-        /// <returns>
-        ///   Conexión disponible.
-        /// </returns>
-        private bool VerificaPuertoComDisponible(string comPort)
-        {
-            bool ok = true;
-
-            using (var serialPort = new SerialPort(comPort, ComSpeed, ComParity, ComDataBits, ComStopBits))
-            {
-                try
-                {
-                    if(!serialPort.IsOpen)
-                    {
-                        serialPort.Open();
-                    }
-                }
-                catch (System.IO.IOException)
-                {
-                    ok = false;
-                }
-                catch (System.ObjectDisposedException)
-                {
-                    ok = false;
-                }
-                finally
-                {
-                    if(serialPort.IsOpen)
-                    {
-                        serialPort.Close();
-                    }
-                }
-                return ok;
-            }
-        }
-
-        /// <summary>
         ///   Busca el puerto COM disponible dentro de un rango dado.
         /// </summary>
         /// <returns>
@@ -320,6 +293,84 @@ namespace BusPirateTerminal
                 }
             }
             return _puertoLocalizado;
+        }
+
+        /// <summary>
+        ///   Verifica si la conexión con el puerto COM está disponible.
+        /// </summary>
+        /// <param name="comPort">
+        ///   Puerto COM a verificar
+        /// </param>
+        /// <returns>
+        ///   Conexión disponible.
+        /// </returns>
+        private bool VerificaPuertoComDisponible(string comPort)
+        {
+            bool ok = true;
+
+            using (var serialPort = new SerialPort(comPort, ComSpeed, ComParity, ComDataBits, ComStopBits))
+            {
+                try
+                {
+                    if (!serialPort.IsOpen)
+                    {
+                        serialPort.Open();
+                    }
+                }
+                catch (System.IO.IOException)
+                {
+                    ok = false;
+                }
+                catch (System.ObjectDisposedException)
+                {
+                    ok = false;
+                }
+                finally
+                {
+                    if (serialPort.IsOpen)
+                    {
+                        serialPort.Close();
+                    }
+                }
+                return ok;
+            }
+        }
+
+        /// <summary>
+        ///   Muestra los parámetros que se han empleado para 
+        ///   establecer la comunicación.
+        /// </summary>
+        /// <returns>
+        ///   Información sobre los parámetros
+        /// </returns>
+        public string MostrarParametros()
+        {
+            string listaParametros = $"Parámetros de la conexión: \n" +
+                $" - ComPort: {ComPort} \n" +
+                $" - ComSpeed: {ComSpeed} \n" +
+                $" - ComParity: {ComParity} \n" +
+                $" - ComBits: {ComDataBits} \n" +
+                $" - ComStopBits{ComStopBits}";
+            return listaParametros;
+        }
+
+        /// <summary>
+        ///   Lista los puertos COM disponibles.
+        /// </summary>
+        /// <returns>
+        ///   Listado de puertos COM
+        /// </returns>
+        public string ListarPuertosDisponibles()
+        {
+            string[] ports = SerialPort.GetPortNames();
+            string listado = $"Listado de puertos COM disponibles: \n";
+
+            foreach (string port in ports)
+            {
+                listado += port + "\n";
+            }
+
+            return listado;
         }
     }
 }
