@@ -1,5 +1,7 @@
 ﻿using System;
 
+// TODO: buscar info sobre: _serialPort.WriteLine(String.Format("<{0}>: {1}", name, message));
+
 namespace BusPirateTerminal
 {
     class Consola

@@ -160,29 +160,7 @@ namespace BusPirateTerminal
         //
 
         /// <summary>
-<<<<<<< HEAD
-        ///   Muestra los parámetros que se han empleado para 
-        ///   establecer la comunicación.
-        /// </summary>
-        /// <returns>
-        ///   Información sobre los parámetros
-        /// </returns>
-        public string MostrarParametros()
-        {
-            string listaParametros = $"Parámetros de la conexión: \n" +
-                $" - ComPort: {ComPort} \n" +
-                $" - ComSpeed: {ComSpeed} \n" +
-                $" - ComParity: {ComParity} \n" +
-                $" - ComBits: {ComDataBits} \n" +
-                $" - ComStopBits: {ComStopBits}";
-            return listaParametros;
-        }
-
-        /// <summary>
         ///   Establece el proceso de comunicación
-=======
-        ///  Establece el proceso de comunicación
->>>>>>> cf8ab40... Añadir listador de puertos COM
         /// </summary>
         public void Conectar()
         {
