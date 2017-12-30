@@ -314,6 +314,7 @@ namespace BusPirateTerminal
             }
         }
 
+        // TODO: Pasar la edición de texto a la clase consola
         /// <summary>
         ///   Muestra los parámetros que se han empleado para 
         ///   establecer la comunicación.
@@ -333,22 +334,16 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///   Lista los puertos COM disponibles.
+        ///   Lista los puertos serie disponibles.
         /// </summary>
         /// <returns>
-        ///   Listado de puertos COM
+        ///   Listado de puertos serie
         /// </returns>
-        public string ListarPuertosDisponibles()
+        public string[] ListarPuertosDisponibles()
         {
-            string[] ports = SerialPort.GetPortNames();
-            string listado = $"Listado de puertos COM disponibles: \n";
+            string[] puertos = SerialPort.GetPortNames();
 
-            foreach (string port in ports)
-            {
-                listado += port + "\n";
-            }
-
-            return listado;
+            return puertos;
         }
     }
 }

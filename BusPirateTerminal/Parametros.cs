@@ -78,13 +78,13 @@ namespace BusPirateTerminal
         public Parametros(string version)
         {
             Cabecera = "\n" +
-                "Terminal de comunicación via puerto serie (COM), orientado a la comunicación \n" +
-                "con el dispositivo 'Pirate Bus' de 'SparkFun'. \n\n" +
+                "Terminal de comunicación via puerto serie, orientado a la comunicación \n" +
+                "con el dispositivo 'Pirate Bus' de 'Dangerous Prototypes'. \n\n" +
 
                 "Existen dos modos de empleo: \n\n" +
 
                 "- Modo automático (sin parámetros), el terminal se configura con los parámetros \n" +
-                "  por defecto necesarios y, localiza el puerto COM al que se ha conectado el \n" +
+                "  por defecto necesarios y, localiza el puerto serie (COM) al que se ha conectado el \n" +
                 "  dispositivo. \n\n" +
 
                 "- Modo manual, es necesario introducir los parámetros de comunicación manualmente. \n" +
@@ -166,9 +166,7 @@ namespace BusPirateTerminal
             // Listado de puertos
             if (param.ListCom)
             {
-                SerialCom conexionSerie = new SerialCom();
-                string puertosDisponibles = conexionSerie.ListarPuertosDisponibles();
-                Console.WriteLine(value: $"{consola.Prompt}{puertosDisponibles}");
+                consola.MsgListadoPuertos();
             }
 
             if ((ParamPort != null) && (! param.Help) && (! param.ListCom))
