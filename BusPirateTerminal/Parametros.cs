@@ -14,62 +14,25 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
+
 using System;
-using CommandLineParser.Arguments;
 using System.Collections.Generic;
+using CommandLineParser.Arguments;
 
 namespace BusPirateTerminal
 {
     /// <summary>
-    ///   Define los parámetros
+    ///     Define los parámetros
     /// </summary>
-    class Parametros
+    internal class Parametros
     {
-        //
-        #region ParametrosDeEntrada
-        //
-        private int port;
-        [ValueArgument(typeof(int), 'p', "port", Description = "Número de puerto COM")]
-        public int Port { get => port; set => port = value; }
-        //
-        private int speed;
-        [ValueArgument(typeof(int), 's', "speed", Description = "Velocidad de comunicación en bps")]
-        public int Speed { get => speed; set => speed = value; }
-        //
-        private String parity;
-        [ValueArgument(typeof(String), 'a', "parity", Description = "Bit de paridad")]
-        public String Parity { get => parity; set => parity = value; }
-        //
-        private int dataBits;
-        [ValueArgument(typeof(int), 'b', "combits", Description = "Número de bits de comunicación")]
-        public int DataBits { get => dataBits; set => dataBits = value; }
-        //
-        private String stopBits;
-        [ValueArgument(typeof(String), 'i', "stopbits", Description = "Bit de parada")]
-        public String StopBits { get => stopBits; set => stopBits = value; }
-        //
-        private bool info;
-        [SwitchArgument('f', "info", false, Description = "Información sobre los parámetros de la conexión.")]
-        public bool Info { get => info; set => info = value; }
-        //
-        private bool listCom;
-        [SwitchArgument('l', "list", false, Description = "Listado de puertos COM disponibles.")]
-        public bool ListCom { get => listCom; set => listCom = value; }
-        //
-        private bool help;
-        [SwitchArgument('h', "help", false, Description = "Esta ayuda.")]
-        public bool Help { get => help; set => help = value; }
-        //
-        #endregion
-        //
+        public int ParamDataBits;
 
-        public string Cabecera { get; }
-        public string Pie { get; }
+        public string ParamParity;
+
         // Parámetros de comunicación
         public string ParamPort;
         public int ParamSpeed;
-        public string ParamParity;
-        public int ParamDataBits;
         public string ParamStopBits;
 
         //
@@ -78,40 +41,32 @@ namespace BusPirateTerminal
         public Parametros(string version)
         {
             Cabecera = "\n" +
-                "Terminal de comunicación via puerto serie, orientado a la comunicación \n" +
-                "con el dispositivo 'Pirate Bus' de 'Dangerous Prototypes'. \n\n" +
+                       "Terminal de comunicación via puerto serie, orientado a la comunicación \n" +
+                       "con el dispositivo 'Pirate Bus' de 'Dangerous Prototypes'. \n\n" +
+                       "Existen dos modos de empleo: \n\n" +
+                       "- Modo automático (sin parámetros), el terminal se configura con los parámetros \n" +
+                       "  por defecto necesarios y, localiza el puerto serie (COM) al que se ha conectado el \n" +
+                       "  dispositivo. \n\n" +
+                       "- Modo manual, es necesario introducir los parámetros de comunicación manualmente. \n" +
+                       "  Si se omite un parámetro, este se sustituye por el valor por defecto. \n\n" +
+                       "Ejemplos: \n\n" +
+                       "- Modo automático: BusPirateTerminal.exe \n" +
+                       "- Modo manual: BusPirateTerminal.exe -p 3 -s 115200 -a none -b 8 -i one" +
+                       "\n";
 
-                "Existen dos modos de empleo: \n\n" +
-
-                "- Modo automático (sin parámetros), el terminal se configura con los parámetros \n" +
-                "  por defecto necesarios y, localiza el puerto serie (COM) al que se ha conectado el \n" +
-                "  dispositivo. \n\n" +
-
-                "- Modo manual, es necesario introducir los parámetros de comunicación manualmente. \n" +
-                "  Si se omite un parámetro, este se sustituye por el valor por defecto. \n\n" +
-
-                "Ejemplos: \n\n" +
-
-                "- Modo automático: BusPirateTerminal.exe \n" +
-                "- Modo manual: BusPirateTerminal.exe -p 3 -s 115200 -a none -b 8 -i one" +
-                "\n";
-
-            Pie = $"\n" +
-                "Velocidades de comunicación: \n" +
-                "  110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000, \n" +
-                "  57600, 115200, 128000, 153600, 230400, 256000, 230400, 256000, 460800, 921600 \n\n" +
-        
-                "Bits de paridad: \n" +
-                "- Even:  Establece el bit de paridad para que el recuento de bits definidos es un número par. \n" +
-                "- Mark:  Deja el bit de paridad que se establece en 1. \n" +
-                "- None:  Se produce ninguna comprobación de paridad. \n" +
-                "- Odd:   Establece el bit de paridad para que el recuento de bits establecidos sea un número impar. \n" +
-                "- Space: Deja el bit de paridad establecido en 0. \n\n" +
-
-                "Bits de datos: 5, 7, 8 \n\n" +
-                "Bits de parada: none, one, onepointfive, two \n\n" +
-
-                $"Autor: Carlos AlMa - 2017 - ({version}) \n";
+            Pie = "\n" +
+                  "Velocidades de comunicación: \n" +
+                  "  110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000, \n" +
+                  "  57600, 115200, 128000, 153600, 230400, 256000, 230400, 256000, 460800, 921600 \n\n" +
+                  "Bits de paridad: \n" +
+                  "- Even:  Establece el bit de paridad para que el recuento de bits definidos es un número par. \n" +
+                  "- Mark:  Deja el bit de paridad que se establece en 1. \n" +
+                  "- None:  Se produce ninguna comprobación de paridad. \n" +
+                  "- Odd:   Establece el bit de paridad para que el recuento de bits establecidos sea un número impar. \n" +
+                  "- Space: Deja el bit de paridad establecido en 0. \n\n" +
+                  "Bits de datos: 5, 7, 8 \n\n" +
+                  "Bits de parada: none, one, onepointfive, two \n\n" +
+                  $"Autor: Carlos AlMa - 2017 - ({version}) \n";
             //
             ParamPort = "";
             ParamSpeed = 115200;
@@ -119,20 +74,24 @@ namespace BusPirateTerminal
             ParamDataBits = 8;
             ParamStopBits = "one";
         }
+        //
+
+        public string Cabecera { get; }
+        public string Pie { get; }
 
         //
         // Métodos
         //
 
         /// <summary>
-        ///   Muestra la ayuda sobre el uso de los parámetros
+        ///     Muestra la ayuda sobre el uso de los parámetros
         /// </summary>
         /// <param name="parser">
-        ///   Parser, analiza los parámetros pasados por línea
-        ///   de comandos.
+        ///     Parser, analiza los parámetros pasados por línea
+        ///     de comandos.
         /// </param>
         /// <param name="param">
-        ///   Parámetros ppasados por línea de comandos
+        ///     Parámetros ppasados por línea de comandos
         /// </param>
         public void MostrarAyudaParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
@@ -142,201 +101,216 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///   Acciones a realizar con los parámetros.
-        ///   Verifica si los parámetros introducidos están dentro 
-        ///   de rango, de lo contrario asigna valores por defecto
-        ///   o muestra mensajes de error.
+        ///     Acciones a realizar con los parámetros.
+        ///     Verifica si los parámetros introducidos están dentro
+        ///     de rango, de lo contrario asigna valores por defecto
+        ///     o muestra mensajes de error.
         /// </summary>
         /// <param name="parser">
-        ///   Analiza los parámetros pasados por línea de comandos.
+        ///     Analiza los parámetros pasados por línea de comandos.
         /// </param>
         /// <param name="param">
-        ///   Parámetros pasados por línea de comandos.
+        ///     Parámetros pasados por línea de comandos.
         /// </param>
         public void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
-            Consola consola = new Consola();
-
+            var consola = new Consola();
+            
             // Ayuda
-            if (param.Help)
-            {
-                param.MostrarAyudaParametros(parser, param);
-            }
+            if (param.Help) param.MostrarAyudaParametros(parser, param);
 
             // Listado de puertos
-            if (param.ListCom)
-            {
-                consola.MsgListadoPuertos();
-            }
+            if (param.ListCom) consola.MsgListadoPuertos();
 
-            if ((ParamPort != null) && (! param.Help) && (! param.ListCom))
-            {
-                // TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM
-                // TODO: Verificar el funcionamimento del listado de puertos en Windows
-                // TODO: Emplear el listado de puertos como argumento para la verificación y asignación en lugar de emplear un rango de posibles valores
-                // Puerto
-                ValidaParamPort(param.Port, 0, 13);
-                Console.WriteLine(value: $"{consola.Prompt}Puerto: {ParamPort}");
+            // Flujo de configuración manual
+            if (ParamPort == null || param.Help || param.ListCom) return;
 
-                // Velocidad
-                ValidaParamSpeed(param.Speed);
-                Console.WriteLine(value: $"{consola.Prompt}Velocidad: {ParamSpeed}");
+            // TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM
+            // TODO: Verificar el funcionamimento del listado de puertos en Windows
+            // TODO: Emplear el listado de puertos como argumento para la verificación y asignación en lugar de emplear un rango de posibles valores
+            
+            // Puerto
+            ValidaParamPort(param.Port, 0, 13);
+            Console.WriteLine($"{consola.Prompt}Puerto: {ParamPort}");
 
-                // Paridad
-                ValidaParidad(param.Parity);
-                Console.WriteLine(value: $"{consola.Prompt}Bit de paridad: {ParamParity}");
+            // Velocidad
+            ValidaParamSpeed(param.Speed);
+            Console.WriteLine($"{consola.Prompt}Velocidad: {ParamSpeed}");
 
-                // Bits de datos
-                ValidaDataBits(param.DataBits);
-                Console.WriteLine(value: $"{consola.Prompt}Bits de comunicaciones: {ParamDataBits}");
+            // Paridad
+            ValidaParidad(param.Parity);
+            Console.WriteLine($"{consola.Prompt}Bit de paridad: {ParamParity}");
 
-                // Bits de parada
-                ValidaStopBits(param.StopBits);
-                Console.WriteLine(value: $"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
+            // Bits de datos
+            ValidaDataBits(param.DataBits);
+            Console.WriteLine($"{consola.Prompt}Bits de comunicaciones: {ParamDataBits}");
 
-                // >>> CONEXIÓN <<<
-                SerialCom conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity, ParamDataBits, ParamStopBits);
-                if (param.Info)
-                {
-                    Console.WriteLine(value: $"{consola.Prompt}{conexionSerie.MostrarParametros()}");
-                }
-                conexionSerie.Conectar();
-            }
+            // Bits de parada
+            ValidaStopBits(param.StopBits);
+            Console.WriteLine($"{consola.Prompt}Asignado bit de parada: {ParamStopBits}");
+
+            // >>> CONEXIÓN <<<
+            var conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity, ParamDataBits, ParamStopBits);
+            if (param.Info) consola.MostrarParametros();
+            
+            conexionSerie.Conectar();
+
         }
 
         /// <summary>
-        ///   Convierte el número de puerto pasado como parámetro
-        ///   en el correspondiente puerto COM.
-        ///   Si no se indica ningún numero de puerto, se realiza
-        ///   un escan de puertos para localizar algúno en uso.
+        ///     Convierte el número de puerto pasado como parámetro
+        ///     en el correspondiente puerto COM.
+        ///     Si no se indica ningún numero de puerto, se realiza
+        ///     un escan de puertos para localizar algúno en uso.
         /// </summary>
         /// <param name="paramPort">
-        ///   Número de puerto COM.
+        ///     Número de puerto COM.
         /// </param>
         /// <param name="portIni">
-        ///   Número de puerto de inicio al realizar el escan de puertos.
+        ///     Número de puerto de inicio al realizar el escan de puertos.
         /// </param>
         /// <param name="portFin">
-        ///   Número de puerto final al realizar el escan de puertos.
+        ///     Número de puerto final al realizar el escan de puertos.
         /// </param>
         public void ValidaParamPort(int paramPort, int portIni, int portFin)
         {
             if (paramPort > 0)
             {
-                ParamPort = "COM" + Convert.ToString(paramPort);                
+                SerialCom puertoSerie = new SerialCom();
+                ParamPort = puertoSerie.PuertoComSeleccionado(paramPort);
             }
+            // TODO: si no se introduce numero de puerto, hay que probar con los del listado de
+            // TODO: ListarPuertosCom, en lugar de realizar una busqueda dentro de un rango.
+            /*
             else
             {
-                SerialCom conexionSerie = new SerialCom(portIni, portFin);
+                var conexionSerie = new SerialCom(portIni, portFin);
                 ParamPort = conexionSerie.BucaPuertoCom();
             }
+            */
         }
 
         /// <summary>
-        ///   Verifica si la velocidad introducida, se corresponde 
-        ///   con algun valor normalizado. En caso contrario se
-        ///   asigna por defecto el valor "115200", que es el 
-        ///   emleado por BusPirate.
+        ///     Verifica si la velocidad introducida, se corresponde
+        ///     con algun valor normalizado. En caso contrario se
+        ///     asigna por defecto el valor "115200", que es el
+        ///     emleado por BusPirate.
         /// </summary>
         /// <param name="paramSpeed">
-        ///   Velocidad de comunicación.
+        ///     Velocidad de comunicación.
         /// </param>
         public void ValidaParamSpeed(int paramSpeed)
         {
-            List<int> posibleSpeed = new List<int>();
-            posibleSpeed.Add(item: 110);
-            posibleSpeed.Add(item: 300);
-            posibleSpeed.Add(item: 600);
-            posibleSpeed.Add(item: 1200);
-            posibleSpeed.Add(item: 2400);
-            posibleSpeed.Add(item: 4800);
-            posibleSpeed.Add(item: 9600);
-            posibleSpeed.Add(item: 14400);
-            posibleSpeed.Add(item: 19200);
-            posibleSpeed.Add(item: 28800);
-            posibleSpeed.Add(item: 38400);
-            posibleSpeed.Add(item: 56000);
-            posibleSpeed.Add(item: 57600);
-            posibleSpeed.Add(item: 115200);
-            posibleSpeed.Add(item: 128000);
-            posibleSpeed.Add(item: 230400);
-            posibleSpeed.Add(item: 256000);
-            posibleSpeed.Add(item: 230400);
-            posibleSpeed.Add(item: 256000);
-            posibleSpeed.Add(item: 460800);
-            posibleSpeed.Add(item: 921600);
-            
-            if (posibleSpeed.Contains(paramSpeed))
+            var posibleSpeed = new List<int>
             {
-                ParamSpeed = paramSpeed;
-            }
+                110,
+                300,
+                600,
+                1200,
+                2400,
+                4800,
+                9600,
+                14400,
+                19200,
+                28800,
+                38400,
+                56000,
+                57600,
+                115200,
+                128000,
+                230400,
+                256000,
+                230400,
+                256000,
+                460800,
+                921600
+            };
+
+            if (posibleSpeed.Contains(paramSpeed)) ParamSpeed = paramSpeed;
         }
 
         /// <summary>
-        ///   Verifica si la paridad introducida, se corresponde 
-        ///   con algun valor normalizado. En caso contrario se
-        ///   asigna por defecto el valor "none", que es el 
-        ///   emleado por BusPirate.
+        ///     Verifica si la paridad introducida, se corresponde
+        ///     con algun valor normalizado. En caso contrario se
+        ///     asigna por defecto el valor "none", que es el
+        ///     emleado por BusPirate.
         /// </summary>
         /// <param name="paramParity">
-        ///   Bit de paridad
+        ///     Bit de paridad
         /// </param>
         public void ValidaParidad(string paramParity)
         {
-            List<string> posibleParity = new List<string>();
-            posibleParity.Add(item: "even");
-            posibleParity.Add(item: "mark");
-            posibleParity.Add(item: "none");
-            posibleParity.Add(item: "odd");
-            posibleParity.Add(item: "space");
-
-            if (posibleParity.Contains(paramParity))
-            {
-                ParamParity = paramParity;
-            }
+            var posibleParity = new List<string> {"even", "mark", "none", "odd", "space"};
+            
+            if (posibleParity.Contains(paramParity)) ParamParity = paramParity;
         }
 
         /// <summary>
-        ///   Verifica si el número de bits de datos, se corresponde 
-        ///   con algun valor normalizado. En caso contrario se asigna 
-        ///   por defecto el valor "8", que es el emleado por BusPirate.
+        ///     Verifica si el número de bits de datos, se corresponde
+        ///     con algun valor normalizado. En caso contrario se asigna
+        ///     por defecto el valor "8", que es el emleado por BusPirate.
         /// </summary>
         /// <param name="paramDataBits">
-        ///   Número de bits de datos
+        ///     Número de bits de datos
         /// </param>
         public void ValidaDataBits(int paramDataBits)
         {
-            List<int> posibleDataBits = new List<int>();
-            posibleDataBits.Add(item: 5);
-            posibleDataBits.Add(item: 7);
-            posibleDataBits.Add(item: 8);
-            
-            if (posibleDataBits.Contains(paramDataBits))
-            {
-                ParamDataBits = paramDataBits;
-            }
+            var posibleDataBits = new List<int> {5, 7, 8};
+
+            if (posibleDataBits.Contains(paramDataBits)) ParamDataBits = paramDataBits;
         }
 
         /// <summary>
-        ///   Verifica si el numero de bits de parada, se corresponde 
-        ///   con algun valor normalizado. En caso contrario se asigna 
-        ///   por defecto el valor "one", que es el emleado por BusPirate.
+        ///     Verifica si el numero de bits de parada, se corresponde
+        ///     con algun valor normalizado. En caso contrario se asigna
+        ///     por defecto el valor "one", que es el emleado por BusPirate.
         /// </summary>
         /// <param name="paramStopBits">
-        ///   Número de bits de parada
+        ///     Número de bits de parada
         /// </param>
         public void ValidaStopBits(string paramStopBits)
         {
-            List<string> posibleStopBits = new List<string>();
-            posibleStopBits.Add(item: "none");
-            posibleStopBits.Add(item: "one");
-            posibleStopBits.Add(item: "onepointfive");
-            posibleStopBits.Add(item: "two");
+            var posibleStopBits = new List<string> {"none", "one", "onepointfive", "two"};
 
-            if (posibleStopBits.Contains(paramStopBits))
-            {
-                ParamStopBits = paramStopBits;
-            }
+            if (posibleStopBits.Contains(paramStopBits)) ParamStopBits = paramStopBits;
         }
+
+        //
+        #region ParametrosDeEntrada
+        //
+        [ValueArgument(typeof(int), 'p', "port", Description = "Número de puerto COM")]
+        public int Port { get; set; }
+
+        //
+        [ValueArgument(typeof(int), 's', "speed", Description = "Velocidad de comunicación en bps")]
+        public int Speed { get; set; }
+
+        //
+        [ValueArgument(typeof(string), 'a', "parity", Description = "Bit de paridad")]
+        public string Parity { get; set; }
+
+        //
+        [ValueArgument(typeof(int), 'b', "combits", Description = "Número de bits de comunicación")]
+        public int DataBits { get; set; }
+
+        //
+        [ValueArgument(typeof(string), 'i', "stopbits", Description = "Bit de parada")]
+        public string StopBits { get; set; }
+
+        //
+        [SwitchArgument('f', "info", false, Description = "Información sobre los parámetros de la conexión.")]
+        public bool Info { get; set; }
+
+        //
+        [SwitchArgument('l', "list", false, Description = "Listado de puertos COM disponibles.")]
+        public bool ListCom { get; set; }
+
+        //
+        [SwitchArgument('h', "help", false, Description = "Esta ayuda.")]
+        public bool Help { get; set; }
+
+        //
+        #endregion
+        //
     }
 }

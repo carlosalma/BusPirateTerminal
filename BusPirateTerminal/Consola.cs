@@ -4,22 +4,21 @@
 
 namespace BusPirateTerminal
 {
-    class Consola
+    internal class Consola
     {
-        public string Prompt { get; }
-        public string PromptPB { get; }
-        public string Version { get; }
-        public ConsoleColor ColorTexto { get; }
-
         public Consola()
         {
             Prompt = "::> ";
-            Version = "0.3";
+            Version = "0.4";
             ColorTexto = ConsoleColor.Red;
         }
 
+        public string Prompt { get; }
+        public string Version { get; }
+        public ConsoleColor ColorTexto { get; }
+
         /// <summary>
-        ///   Cabecera
+        ///     Cabecera
         /// </summary>
         public void MsgPresentacion()
         {
@@ -30,36 +29,58 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///   Cuerpo
+        ///     Cuerpo
         /// </summary>
         /// <param name="comPort">
         /// </param>
         public void MsgConexionEstablecida(string comPort)
         {
-            Console.WriteLine(value: $"{Prompt}Conexión: ESTABLECIDA en puerto {comPort}");
-            Console.WriteLine(value: $"{Prompt}Para salir de la consola, teclear: quit");
+            Console.WriteLine($"{Prompt}Conexión: ESTABLECIDA en puerto {comPort}");
+            Console.WriteLine($"{Prompt}Para salir de la consola, teclear: quit");
             Console.WriteLine("----------------------------------------------");
         }
 
         /// <summary>
-        ///   Muestra el número de puertos serie disponibles
-        ///   en el dispositivo y los lista.
+        ///     Muestra el número de puertos serie disponibles
+        ///     en el dispositivo y los lista.
         /// </summary>
         public void MsgListadoPuertos()
         {
-            SerialCom conexionSerie = new SerialCom();
-
-            string[] puertos = conexionSerie.ListarPuertosDisponibles();
-
-            string listado = "Listado de puertos: \n";
-
-            foreach (string puerto in puertos)
+            var conexionSerie = new SerialCom();
+            var puertos = conexionSerie.ListarPuertosCom();
+            string listado = null;
+            int cnt = 0;
+            string espacios = " ";
+            
+            foreach (var puerto in puertos)
             {
-                listado += puerto + "\n";
+                listado += "| " + cnt + espacios + "| " + puerto + "\n";
+                cnt++;
             }
 
-            Console.WriteLine(value: $"{Prompt}Número de puertos serie disponibles: {puertos.Length}");
-            Console.WriteLine(value: $"{Prompt}{listado}");
+            Console.WriteLine($"{Prompt}Número de puertos serie disponibles: {puertos.Length}");
+            Console.WriteLine($"{Prompt}Listado de puertos: \n");
+            Console.WriteLine($"|-----|--------------------------------------");
+            Console.WriteLine($"| ID  |   DISPOSITIVO");
+            Console.WriteLine($"|-----|--------------------------------------");
+            Console.WriteLine($"{listado}");
+        }
+        
+        /// <summary>
+        ///     Muestra los parámetros que se han empleado para
+        ///     establecer la comunicación.
+        /// </summary>
+        public void MostrarParametros()
+        {
+            var conexionSerie = new SerialCom();
+            var listaParametros = $"Parámetros de la conexión: \n" +
+                                  $" - ComPort: {conexionSerie.ComPort} \n" +
+                                  $" - ComSpeed: {conexionSerie.ComSpeed} \n" +
+                                  $" - ComParity: {conexionSerie.ComParity} \n" +
+                                  $" - ComBits: {conexionSerie.ComDataBits} \n" +
+                                  $" - ComStopBits{conexionSerie.ComStopBits}";
+            
+            Console.WriteLine($"{Prompt}{listaParametros}");
         }
     }
 }

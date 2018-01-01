@@ -14,20 +14,21 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
+
 using System;
 using CommandLineParser.Exceptions;
 
 namespace BusPirateTerminal
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Consola consola = new Consola();
+            var consola = new Consola();
             consola.MsgPresentacion();
 
-            CommandLineParser.CommandLineParser parser = new CommandLineParser.CommandLineParser();
-            Parametros param = new Parametros(consola.Version);
+            var parser = new CommandLineParser.CommandLineParser();
+            var param = new Parametros(consola.Version);
 
             try
             {
