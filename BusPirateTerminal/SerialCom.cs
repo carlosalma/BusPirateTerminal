@@ -28,45 +28,52 @@ namespace BusPirateTerminal
         // Propiedades
         //
 
-        public string ComPort { get; set; }
+        public string ComPort { get; set; }  
         public int ComSpeed { get; set; }
         public Parity ComParity { get; set; }
         public int ComDataBits { get; set; }
         public StopBits ComStopBits { get; set; }
         public bool ComOk { get; set; }
-        public int PortIni { get; set; }
-
-        public int PortFin { get; set; }
-        //
-
+        
         //
         #region Constructores
 
-        //
-
+   
         /// <summary>
         /// </summary>
         public SerialCom()
         {
         }
+        
+        /// <summary>
+        ///     Constructor que se emplea para seleccionar un puerto
+        ///     COM partiendo de su ID.
+        ///     Los ID de puerto, se pueden listar mediante el parámetro -l
+        /// </summary>
+        public SerialCom(int id)
+        {
+            ComPort = ExtraePuertoComPorID(id - 1);
+        }
 
+        // TODO: adapatar los parámetros de entrada del constructor
         /// <summary>
         ///     Auto configuración para BusPirate.
-        ///     Dispone de todos los parámetros para establecer
-        ///     la comunicación, excepto el puerto COM empleado,
-        ///     que lo localiza.
+        ///     Emplea estos parámetros para realizar la prueba de
+        ///     puerto COM mediante:
+        ///     VerificaPuertoComDisponible(string comPort)
         /// </summary>
-        public SerialCom(int portIni, int portFin)
+        /// <param name="patron">
+        ///     Patrón a emplear al localizar el dispositivo conectado
+        /// </param>
+        public SerialCom(string patron)
         {
             ComSpeed = 115200;
             ComParity = Parity.None;
             ComDataBits = 8;
             ComStopBits = StopBits.One;
             ComOk = true;
-            PortIni = portIni;
-            PortFin = portFin;
-
-            ComPort = BucaPuertoCom();
+            
+            ComPort = BucaPuertoComMediantePatron(patron);
             if (ComPort == null) ComOk = false;
         }
 
@@ -179,7 +186,7 @@ namespace BusPirateTerminal
 
                     new Thread(() =>
                     {
-                        if (serialPort != null) ok = RespuestaDsipositivoCOM(serialPort, consola);
+                        if (serialPort != null) ok = RespuestaDispositivoCom(serialPort, consola);
                     }).Start();
 
                     if (!ok) Console.WriteLine($"{consola.Prompt}Cerrando consola ...");
@@ -212,8 +219,7 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///     Muestra por consola la respuesta del dispositivo
-        ///     conectado al puerto COM.
+        ///     Respuesta por consola del dispositivo conectado al puerto COM.
         /// </summary>
         /// <param name="comPort">
         ///     Puerto COM empleado
@@ -223,7 +229,7 @@ namespace BusPirateTerminal
         /// <returns>
         ///     true, si no hay problemas en el proceso.
         /// </returns>
-        private bool RespuestaDsipositivoCOM(SerialPort comPort, Consola consola)
+        private bool RespuestaDispositivoCom(SerialPort comPort, Consola consola)
         {
             bool ok;
 
@@ -240,37 +246,40 @@ namespace BusPirateTerminal
 
             return ok;
         }
-
+        
         /// <summary>
-        ///     Busca el puerto COM disponible dentro de un rango dado.
+        ///     Busca un dispositivo conectado a un puerto COM.
+        ///     Para localizar un dispositivo concreto, emplea un patrón con formato
+        ///     string que lo identifica.
         /// </summary>
+        /// <param name="patron">
+        ///     Patrón de busqueda, que identifique al dispositivo concreto.
+        ///     Por ejemplo, BusPirate en OSX se identifica como:
+        ///     "/dev/tty.usbserial-A505M5LI", por lo que se puede emplear por ejemplo
+        ///     como patrón "usbserial".
+        /// </param>
         /// <returns>
-        ///     Número del puerto localizado.
+        ///     Puerto localizado, de lo contrario Null.
         /// </returns>
-        public string BucaPuertoCom()
+        public string BucaPuertoComMediantePatron(string patron)
         {
-            var _portName = "COM";
-            var _portSearch = "";
-            string _puertoLocalizado = null;
-            var _portOk = false;
-
-            for (var port = PortIni; port <= PortFin; port++)
+            foreach (var puerto in ListarPuertosCom())
             {
-                _portSearch = _portName + port;
-                _portOk = VerificaPuertoComDisponible(_portSearch);
-
-                if (_portOk)
-                {
-                    _puertoLocalizado = _portSearch;
-                    break;
-                }
+                // Hay patrón
+                if (patron != null)
+                                 
+                    // Localizar el patrón en el puerto 
+                    if (System.Text.RegularExpressions.Regex.IsMatch(puerto, patron))
+           
+                        // Verificar si el puerto con el patrón responde
+                        if (VerificaPuertoComDisponible(puerto)) return puerto;
+               
             }
-
-            return _puertoLocalizado;
+            return null;
         }
 
         /// <summary>
-        ///     Verifica si la conexión con el puerto COM está disponible.
+        ///     Verifica si la conexión con el puerto COM indicado está disponible.
         /// </summary>
         /// <param name="comPort">
         ///     Puerto COM a verificar
@@ -306,10 +315,10 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///     Lista los puertos serie disponibles.
+        ///     Matriz con la lista de los puertos COM disponibles.
         /// </summary>
         /// <returns>
-        ///     Listado de puertos serie
+        ///     Listado de puertos COM
         /// </returns>
         public string[] ListarPuertosCom()
         {
@@ -327,7 +336,7 @@ namespace BusPirateTerminal
         /// <returns>
         ///     Puerto COM seleccionado
         /// </returns>
-        public string PuertoComSeleccionado(int id)
+        public string ExtraePuertoComPorID(int id)
         {
             string[] puertos = SerialPort.GetPortNames();
             string puerto = null;

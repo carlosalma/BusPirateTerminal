@@ -41,8 +41,7 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///     Muestra el número de puertos serie disponibles
-        ///     en el dispositivo y los lista.
+        ///     Muestra el listado de dispositivos conectados a puertos COM
         /// </summary>
         public void MsgListadoPuertos()
         {
@@ -50,22 +49,33 @@ namespace BusPirateTerminal
             var puertos = conexionSerie.ListarPuertosCom();
             string listado = null;
             int cnt = 0;
-            string espacios = " ";
             
+            
+            // RegExp, para dispositivos COM en OSX
+            string regExpOsx = @"/dev/tty\.";
+
+            // RegExp, para dispositivos COM en OSX
+            string regExpWin = @"COM\d";
+
             foreach (var puerto in puertos)
             {
-                listado += "| " + cnt + espacios + "| " + puerto + "\n";
-                cnt++;
+                var comEnUsoOsx = System.Text.RegularExpressions.Regex.IsMatch(puerto, regExpOsx);
+                var comEnUsoWin = System.Text.RegularExpressions.Regex.IsMatch(puerto, regExpWin);
+                    
+                if (comEnUsoOsx || comEnUsoWin)
+                {
+                    cnt++;   
+                    listado += "|  " + cnt + " | " + puerto + "\n";
+                }
             }
-
-            Console.WriteLine($"{Prompt}Número de puertos serie disponibles: {puertos.Length}");
-            Console.WriteLine($"{Prompt}Listado de puertos: \n");
-            Console.WriteLine($"|-----|--------------------------------------");
-            Console.WriteLine($"| ID  |   DISPOSITIVO");
-            Console.WriteLine($"|-----|--------------------------------------");
+            
+            Console.WriteLine($"{Prompt}Listado de puertos \n");
+            Console.WriteLine($"|----|--------------------------------------");
+            Console.WriteLine($"| ID |   DISPOSITIVO COM");
+            Console.WriteLine($"|----|--------------------------------------");
             Console.WriteLine($"{listado}");
         }
-        
+
         /// <summary>
         ///     Muestra los parámetros que se han empleado para
         ///     establecer la comunicación.
@@ -79,7 +89,7 @@ namespace BusPirateTerminal
                                   $" - ComParity: {conexionSerie.ComParity} \n" +
                                   $" - ComBits: {conexionSerie.ComDataBits} \n" +
                                   $" - ComStopBits{conexionSerie.ComStopBits}";
-            
+
             Console.WriteLine($"{Prompt}{listaParametros}");
         }
     }

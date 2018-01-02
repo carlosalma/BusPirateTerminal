@@ -27,13 +27,14 @@ namespace BusPirateTerminal
     internal class Parametros
     {
         public int ParamDataBits;
-
         public string ParamParity;
 
         // Parámetros de comunicación
         public string ParamPort;
         public int ParamSpeed;
         public string ParamStopBits;
+        //
+        public string Patrones;
 
         //
         // Constructor
@@ -73,6 +74,10 @@ namespace BusPirateTerminal
             ParamParity = "none";
             ParamDataBits = 8;
             ParamStopBits = "one";
+            // TODO: Convertir la variable de string a matriz para añadir mas de un patrón de dispositivo
+            // TODO: los patrones tienen que formar expresiones regulares.
+            Patrones = @"usbserial";
+            //Patrones = @"COM\d";
         }
         //
 
@@ -130,7 +135,7 @@ namespace BusPirateTerminal
             // TODO: Emplear el listado de puertos como argumento para la verificación y asignación en lugar de emplear un rango de posibles valores
             
             // Puerto
-            ValidaParamPort(param.Port, 0, 13);
+            ValidaParamPort(param.Port, Patrones);
             Console.WriteLine($"{consola.Prompt}Puerto: {ParamPort}");
 
             // Velocidad
@@ -158,43 +163,50 @@ namespace BusPirateTerminal
         }
 
         /// <summary>
-        ///     Convierte el número de puerto pasado como parámetro
-        ///     en el correspondiente puerto COM.
-        ///     Si no se indica ningún numero de puerto, se realiza
-        ///     un escan de puertos para localizar algúno en uso.
+        ///     Si se indica un ID de puerto, se emplea para establecer la conexión
+        ///     con el dispositivo, de lo contrario, se intenta localizar un
+        ///     dispositivo cuyo nombre disponga de un patron de texto determinado. 
         /// </summary>
-        /// <param name="paramPort">
+        /// <param name="selecPort">
         ///     Número de puerto COM.
         /// </param>
-        /// <param name="portIni">
-        ///     Número de puerto de inicio al realizar el escan de puertos.
+        /// <param name="patron">
+        ///     Patrón de texto a localizar en el nombre del dispositivo
         /// </param>
-        /// <param name="portFin">
-        ///     Número de puerto final al realizar el escan de puertos.
-        /// </param>
-        public void ValidaParamPort(int paramPort, int portIni, int portFin)
+        public void ValidaParamPort(int selecPort, string patron)
         {
-            if (paramPort > 0)
-            {
-                SerialCom puertoSerie = new SerialCom();
-                ParamPort = puertoSerie.PuertoComSeleccionado(paramPort);
-            }
+            // TODO: verificar en windows el método de busqueda de puerto
+            // TODO: si es posible, eliminar los parámetros portIni y portFin
             // TODO: si no se introduce numero de puerto, hay que probar con los del listado de
             // TODO: ListarPuertosCom, en lugar de realizar una busqueda dentro de un rango.
-            /*
+            // TODO: Intentar eliminar aramPort = conexionSerie.ComPort;
+            
+            Consola consola =  new Consola();
+            
+            if (selecPort > 0)
+            {
+                SerialCom conexionSerie = new SerialCom(selecPort);
+                ParamPort = conexionSerie.ComPort;
+            }    
+            // Si no se ha especificado ningún Id de puerto
             else
             {
-                var conexionSerie = new SerialCom(portIni, portFin);
-                ParamPort = conexionSerie.BucaPuertoCom();
-            }
-            */
+                // TODO: Cuando funcione, sacar la variable patrón fuera del método
+                
+                // Realiza la busqueda de sipositivo por patrón
+                SerialCom conexionSerie = new SerialCom(patron);
+                
+                ParamPort = conexionSerie.ComPort;
+                
+                if (ParamPort != null)
+                    Console.WriteLine($"{consola.Prompt}Localizado puerto >> {ParamPort} <<, con patrón: >> {patron} <<");
+            }            
         }
 
         /// <summary>
-        ///     Verifica si la velocidad introducida, se corresponde
-        ///     con algun valor normalizado. En caso contrario se
-        ///     asigna por defecto el valor "115200", que es el
-        ///     emleado por BusPirate.
+        ///     Verifica si la velocidad introducida, se corresponde con algun
+        ///     valor normalizado. En caso contrario se asigna por defecto el
+        ///     valor "115200", que es el emleado por BusPirate.
         /// </summary>
         /// <param name="paramSpeed">
         ///     Velocidad de comunicación.
