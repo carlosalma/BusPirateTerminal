@@ -38,11 +38,11 @@ namespace BusPirateTerminal
             }
             catch (CommandLineException)
             {
-                param.MostrarAyudaParametros(parser, param);
+                Parametros.MostrarAyudaParametros(parser, param);
             }
             catch (Exception)
             {
-                param.MostrarAyudaParametros(parser, param);
+                Parametros.MostrarAyudaParametros(parser, param);
             }
         }
     }

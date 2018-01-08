@@ -2,7 +2,7 @@
 
 La siguiente aplicación, esta escrita en C# y tiene carácter formativo.
 
-Actúa como terminal de comunicación vía puerto serie, permitiendo la comunicación con la herramienta [Bus Pirate](http://dangerousprototypes.com/blog/bus-pirate-manual/) de [Dangerous Prototypes](http://dangerousprototypes.com/), o cualquier otra que emplee, este tipo de comunicación.
+Este terminal forma parte del estudio del funcionamiento de la herramienta [Bus Pirate](http://dangerousprototypes.com/blog/bus-pirate-manual/) de [Dangerous Prototypes](http://dangerousprototypes.com/). Actúa como terminal de comunicación vía puerto serie, puede emplearse con **Bus Pirate** o con cualquier otra que emplee, este tipo de comunicación.
 
 ## Uso
 
@@ -53,7 +53,10 @@ Bits de parada [Stop bits]
   * Onepointfive
   * Two
 
-**Nota:** *El proceso de comunicación se encuentra en la clase* **SerialCom**.
+**Notas:**
+
+- El proceso de comunicación se encuentra en la clase* **SerialCom**.
+- Se ha verificado su funcionamiento en Windows 10 y macOS 10.13.1.
 
 ## Enlaces
 

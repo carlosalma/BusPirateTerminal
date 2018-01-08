@@ -19,6 +19,8 @@ using System;
 using System.Collections.Generic;
 using CommandLineParser.Arguments;
 
+// TODO: Reponer todos las llaves de los if
+
 namespace BusPirateTerminal
 {
     /// <summary>
@@ -26,15 +28,16 @@ namespace BusPirateTerminal
     /// </summary>
     internal class Parametros
     {
+        //
+        private readonly List<string> _patrones = new List<string>();
         public int ParamDataBits;
         public string ParamParity;
 
         // Parámetros de comunicación
         public string ParamPort;
         public int ParamSpeed;
+
         public string ParamStopBits;
-        //
-        public string Patrones;
 
         //
         // Constructor
@@ -63,7 +66,7 @@ namespace BusPirateTerminal
                   "- Even:  Establece el bit de paridad para que el recuento de bits definidos es un número par. \n" +
                   "- Mark:  Deja el bit de paridad que se establece en 1. \n" +
                   "- None:  Se produce ninguna comprobación de paridad. \n" +
-                  "- Odd:   Establece el bit de paridad para que el recuento de bits establecidos sea un número impar. \n" +
+                  "- Odd:   Establece el bit de paridad para que el recuento de bits establecidos sea impar. \n" +
                   "- Space: Deja el bit de paridad establecido en 0. \n\n" +
                   "Bits de datos: 5, 7, 8 \n\n" +
                   "Bits de parada: none, one, onepointfive, two \n\n" +
@@ -74,15 +77,14 @@ namespace BusPirateTerminal
             ParamParity = "none";
             ParamDataBits = 8;
             ParamStopBits = "one";
-            // TODO: Convertir la variable de string a matriz para añadir mas de un patrón de dispositivo
-            // TODO: los patrones tienen que formar expresiones regulares.
-            Patrones = @"usbserial";
-            //Patrones = @"COM\d";
+            //
+            _patrones.Add(@"usbserial");
+            _patrones.Add(@"COM\d");
         }
         //
 
-        public string Cabecera { get; }
-        public string Pie { get; }
+        private string Cabecera { get; }
+        private string Pie { get; }
 
         //
         // Métodos
@@ -98,7 +100,7 @@ namespace BusPirateTerminal
         /// <param name="param">
         ///     Parámetros ppasados por línea de comandos
         /// </param>
-        public void MostrarAyudaParametros(CommandLineParser.CommandLineParser parser, Parametros param)
+        public static void MostrarAyudaParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
             parser.ShowUsageHeader = param.Cabecera;
             parser.ShowUsageFooter = param.Pie;
@@ -120,9 +122,9 @@ namespace BusPirateTerminal
         public void SeleccionParametros(CommandLineParser.CommandLineParser parser, Parametros param)
         {
             var consola = new Consola();
-            
+
             // Ayuda
-            if (param.Help) param.MostrarAyudaParametros(parser, param);
+            if (param.Help) MostrarAyudaParametros(parser, param);
 
             // Listado de puertos
             if (param.ListCom) consola.MsgListadoPuertos();
@@ -132,10 +134,9 @@ namespace BusPirateTerminal
 
             // TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM
             // TODO: Verificar el funcionamimento del listado de puertos en Windows
-            // TODO: Emplear el listado de puertos como argumento para la verificación y asignación en lugar de emplear un rango de posibles valores
-            
+
             // Puerto
-            ValidaParamPort(param.Port, Patrones);
+            ValidaParamPort(param.Port, _patrones);
             Console.WriteLine($"{consola.Prompt}Puerto: {ParamPort}");
 
             // Velocidad
@@ -156,51 +157,52 @@ namespace BusPirateTerminal
 
             // >>> CONEXIÓN <<<
             var conexionSerie = new SerialCom(ParamPort, ParamSpeed, ParamParity, ParamDataBits, ParamStopBits);
-            if (param.Info) consola.MostrarParametros();
-            
-            conexionSerie.Conectar();
+            if (param.Info && conexionSerie.ComOk) consola.MostrarParametros(conexionSerie);
 
+            conexionSerie.Conectar();
         }
 
         /// <summary>
         ///     Si se indica un ID de puerto, se emplea para establecer la conexión
         ///     con el dispositivo, de lo contrario, se intenta localizar un
-        ///     dispositivo cuyo nombre disponga de un patron de texto determinado. 
+        ///     dispositivo cuyo nombre disponga de un patron de texto determinado.
         /// </summary>
         /// <param name="selecPort">
         ///     Número de puerto COM.
         /// </param>
-        /// <param name="patron">
-        ///     Patrón de texto a localizar en el nombre del dispositivo
+        /// <param name="patrones">
+        ///     Matriz que contiene los patrones de texto a localizar en el nombre
+        ///     del dispositivo.
         /// </param>
-        public void ValidaParamPort(int selecPort, string patron)
+        public void ValidaParamPort(int selecPort, IEnumerable<string> patrones)
         {
             // TODO: verificar en windows el método de busqueda de puerto
-            // TODO: si es posible, eliminar los parámetros portIni y portFin
-            // TODO: si no se introduce numero de puerto, hay que probar con los del listado de
-            // TODO: ListarPuertosCom, en lugar de realizar una busqueda dentro de un rango.
-            // TODO: Intentar eliminar aramPort = conexionSerie.ComPort;
-            
-            Consola consola =  new Consola();
-            
+            // TODO: Intentar eliminar paramPort = conexionSerie.ComPort;
+
+            var consola = new Consola();
+
             if (selecPort > 0)
             {
-                SerialCom conexionSerie = new SerialCom(selecPort);
+                var conexionSerie = new SerialCom(selecPort);
                 ParamPort = conexionSerie.ComPort;
-            }    
+            }
             // Si no se ha especificado ningún Id de puerto
             else
             {
-                // TODO: Cuando funcione, sacar la variable patrón fuera del método
-                
-                // Realiza la busqueda de sipositivo por patrón
-                SerialCom conexionSerie = new SerialCom(patron);
-                
-                ParamPort = conexionSerie.ComPort;
-                
-                if (ParamPort != null)
-                    Console.WriteLine($"{consola.Prompt}Localizado puerto >> {ParamPort} <<, con patrón: >> {patron} <<");
-            }            
+                // Realiza la busqueda de dispositivo por patrón
+                foreach (var patron in patrones)
+                {
+                    var conexionSerie = new SerialCom(patron);
+
+                    // Si se localiza una conexión que coincida con el patrón
+                    if (conexionSerie.ComPort != null)
+                    {
+                        ParamPort = conexionSerie.ComPort;
+                        Console.WriteLine($"{consola.Prompt}Localizado puerto con el patrón: {patron}");
+                        return;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -253,7 +255,7 @@ namespace BusPirateTerminal
         public void ValidaParidad(string paramParity)
         {
             var posibleParity = new List<string> {"even", "mark", "none", "odd", "space"};
-            
+
             if (posibleParity.Contains(paramParity)) ParamParity = paramParity;
         }
 
@@ -288,7 +290,9 @@ namespace BusPirateTerminal
         }
 
         //
+
         #region ParametrosDeEntrada
+
         //
         [ValueArgument(typeof(int), 'p', "port", Description = "Número de puerto COM")]
         public int Port { get; set; }
@@ -322,7 +326,9 @@ namespace BusPirateTerminal
         public bool Help { get; set; }
 
         //
+
         #endregion
+
         //
     }
 }
