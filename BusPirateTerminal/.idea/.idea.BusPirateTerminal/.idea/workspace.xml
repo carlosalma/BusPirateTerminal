@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55e0f725-824b-49a4-8996-51014528b5a6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BusPirateTerminal/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.BusPirateTerminal/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="55e0f725-824b-49a4-8996-51014528b5a6" name="Default" comment="" />
     <ignored path=".idea/.idea.BusPirateTerminal/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -127,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/Consola.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="428">
-              <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
               <folding>
                 <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
                 <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
@@ -347,7 +345,7 @@
       <workItem from="1516131607378" duration="1769000" />
       <workItem from="1516182073049" duration="2080000" />
       <workItem from="1516184264866" duration="453000" />
-      <workItem from="1516187250779" duration="165000" />
+      <workItem from="1516187250779" duration="256000" />
     </task>
     <task id="LOCAL-00001" summary="Compatibilidad OSX">
       <created>1514767542131</created>
@@ -367,7 +365,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62463000" />
+    <option name="totallyTimeSpent" value="62554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1896,7 +1894,7 @@
     <entry file="file://$PROJECT_DIR$/Consola.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
-          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
           <folding>
             <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
             <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
