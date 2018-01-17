@@ -5,9 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BusPirateTerminal/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.BusPirateTerminal/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Consola.cs" afterPath="$PROJECT_DIR$/Consola.cs" />
       <change beforePath="$PROJECT_DIR$/Parametros.cs" afterPath="$PROJECT_DIR$/Parametros.cs" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" afterPath="$PROJECT_DIR$/Program.cs" />
-      <change beforePath="$PROJECT_DIR$/SerialCom.cs" afterPath="$PROJECT_DIR$/SerialCom.cs" />
+      <change beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
     </list>
+    <ignored path=".idea/.idea.BusPirateTerminal/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/SerialCom.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3045">
-              <caret line="208" column="31" lean-forward="false" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
+              <caret line="208" column="33" lean-forward="false" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
               <folding>
                 <marker date="1515341338381" expanded="true" signature="0:683" ph="/* SerialCom.cs: Comunicaciones mediante puerto serie. ... */" />
                 <marker date="1515341338381" expanded="false" signature="691:834" ph="..." />
@@ -89,66 +89,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parametros.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Parametros.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parametros.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4425">
-              <caret line="297" column="33" lean-forward="false" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
+            <state relative-caret-position="1995">
+              <caret line="135" column="81" lean-forward="false" selection-start-line="135" selection-start-column="81" selection-end-line="135" selection-end-column="81" />
               <folding>
-                <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-                <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-                <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-                <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-                <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-                <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-                <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-                <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-                <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-                <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-                <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-                <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-                <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-                <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-                <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-                <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+                <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+                <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+                <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+                <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+                <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+                <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+                <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+                <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+                <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+                <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+                <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+                <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+                <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+                <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Consola.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Consola.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Consola.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+            <state relative-caret-position="413">
+              <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
               <folding>
-                <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-                <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-                <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-                <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-                <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-                <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-                <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+                <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+                <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+                <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+                <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+                <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+                <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+                <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+                <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -157,11 +156,11 @@
       <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-                <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+                <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
                 <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
                 <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
                 <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -178,6 +177,7 @@
     <findStrings>
       <find>regex</find>
       <find>patrones</find>
+      <find>TODO:</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,9 +196,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/SerialCom.cs" />
         <option value="$PROJECT_DIR$/Parametros.cs" />
         <option value="$PROJECT_DIR$/Consola.cs" />
-        <option value="$PROJECT_DIR$/SerialCom.cs" />
       </list>
     </option>
   </component>
@@ -209,8 +209,25 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="22" />
     <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="height" value="678" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -315,6 +332,19 @@
       <workItem from="1515340172935" duration="1687000" />
       <workItem from="1515343813614" duration="790000" />
       <workItem from="1515362159695" duration="18000" />
+      <workItem from="1515421190219" duration="33000" />
+      <workItem from="1515678906361" duration="19000" />
+      <workItem from="1515764719487" duration="34000" />
+      <workItem from="1515782001187" duration="1091000" />
+      <workItem from="1515885003519" duration="65000" />
+      <workItem from="1516017005366" duration="42000" />
+      <workItem from="1516125538663" duration="6000" />
+      <workItem from="1516125578300" duration="518000" />
+      <workItem from="1516126316446" duration="473000" />
+      <workItem from="1516130411891" duration="67000" />
+      <workItem from="1516131607378" duration="1769000" />
+      <workItem from="1516182073049" duration="2080000" />
+      <workItem from="1516184264866" duration="87000" />
     </task>
     <task id="LOCAL-00001" summary="Compatibilidad OSX">
       <created>1514767542131</created>
@@ -327,7 +357,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55648000" />
+    <option name="totallyTimeSpent" value="61932000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,16 +376,16 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282123" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282123" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32611638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282123" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325419" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26812688" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19410875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23338369" sideWeight="0.4944134" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991881" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3980447" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26963747" sideWeight="0.50558656" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -364,7 +394,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282123" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681563" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -396,6 +426,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -410,211 +466,27 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SerialCom.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1515341338381" expanded="true" signature="0:683" ph="/* SerialCom.cs: Comunicaciones mediante puerto serie. ... */" />
-            <marker date="1515341338381" expanded="false" signature="691:834" ph="..." />
-            <marker date="1515341338381" expanded="true" signature="894:10566" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="909:945" ph="/* Propiedades ... */" />
-            <marker date="1515341338381" expanded="true" signature="1201:1245" ph="/* Métodos ... */" />
-            <marker date="1515341338381" expanded="true" signature="1255:1344" ph="///     Establece el proceso de comunicación ... " />
-            <marker date="1515341338381" expanded="true" signature="1375:3000" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1450:2865" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1665:2851" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1707:1794" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1834:1972" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2190:2833" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2299:2643" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2687:2811" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2882:2990" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3010:3317" ph="///     Respuesta por consola del dispositivo conectado al puerto COM. ... " />
-            <marker date="1515341338381" expanded="true" signature="3389:3718" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3424:3620" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3455:3538" ph="/* Escribe en la consola, la respuesta ... */" />
-            <marker date="1515341338381" expanded="true" signature="3650:3708" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3728:4383" ph="///     Busca un dispositivo conectado a un puerto COM. ... " />
-            <marker date="1515341338381" expanded="true" signature="4448:4931" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="4513:4895" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="4941:5238" ph="///     Verifica si la conexión con el puerto COM indicado está disponible. ... " />
-            <marker date="1515341338381" expanded="true" signature="5303:5977" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5449:5967" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5483:5582" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5618:5686" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5734:5802" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5826:5925" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5987:6175" ph="///     Matriz con la lista de los puertos COM disponibles. ... " />
-            <marker date="1515341338381" expanded="true" signature="6236:6338" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="6348:6644" ph="///     Extrae el puerto COM correspondiente al ID introducido ... " />
-            <marker date="1515341338381" expanded="true" signature="6703:6910" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="6932:10560" ph="Constructores" />
-            <marker date="1515341338381" expanded="true" signature="6963:6999" ph="/// ... " />
-            <marker date="1515341338381" expanded="true" signature="7026:7046" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="7056:7277" ph="///     Constructor que se emplea para seleccionar un puerto ... " />
-            <marker date="1515341338381" expanded="true" signature="7310:7382" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="7392:7795" ph="///     Auto configuración para BusPirate. ... " />
-            <marker date="1515341338381" expanded="true" signature="7835:8126" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="8136:8723" ph="///     Permite establecer los parámetros de comunicación. ... " />
-            <marker date="1515341338381" expanded="true" signature="8833:10528" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="9052:9682" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="9771:10331" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="10387:10518" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parametros.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
-          <caret line="190" column="83" lean-forward="false" selection-start-line="190" selection-start-column="83" selection-end-line="190" selection-end-column="83" />
-          <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Consola.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="40" />
-          <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
-            <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
-            <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
-            <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
-            <marker date="1515262988630" expanded="true" signature="1295:1389" ph="{...}" />
-            <marker date="1515262988630" expanded="true" signature="1419:1513" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SerialCom.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5400">
-          <caret line="363" column="34" lean-forward="false" selection-start-line="363" selection-start-column="34" selection-end-line="363" selection-end-column="34" />
-          <folding>
-            <marker date="1515341338381" expanded="true" signature="0:683" ph="/* SerialCom.cs: Comunicaciones mediante puerto serie. ... */" />
-            <marker date="1515341338381" expanded="false" signature="691:834" ph="..." />
-            <marker date="1515341338381" expanded="true" signature="894:10566" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="909:945" ph="/* Propiedades ... */" />
-            <marker date="1515341338381" expanded="true" signature="1201:1245" ph="/* Métodos ... */" />
-            <marker date="1515341338381" expanded="true" signature="1255:1344" ph="///     Establece el proceso de comunicación ... " />
-            <marker date="1515341338381" expanded="true" signature="1375:3000" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1450:2865" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1665:2851" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1707:1794" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="1834:1972" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2190:2833" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2299:2643" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2687:2811" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="2882:2990" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3010:3317" ph="///     Respuesta por consola del dispositivo conectado al puerto COM. ... " />
-            <marker date="1515341338381" expanded="true" signature="3389:3718" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3424:3620" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3455:3538" ph="/* Escribe en la consola, la respuesta ... */" />
-            <marker date="1515341338381" expanded="true" signature="3650:3708" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="3728:4383" ph="///     Busca un dispositivo conectado a un puerto COM. ... " />
-            <marker date="1515341338381" expanded="true" signature="4448:4931" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="4513:4895" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="4941:5238" ph="///     Verifica si la conexión con el puerto COM indicado está disponible. ... " />
-            <marker date="1515341338381" expanded="true" signature="5303:5977" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5449:5967" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5483:5582" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5618:5686" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5734:5802" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5826:5925" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="5987:6175" ph="///     Matriz con la lista de los puertos COM disponibles. ... " />
-            <marker date="1515341338381" expanded="true" signature="6236:6338" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="6348:6644" ph="///     Extrae el puerto COM correspondiente al ID introducido ... " />
-            <marker date="1515341338381" expanded="true" signature="6703:6910" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="6932:10560" ph="Constructores" />
-            <marker date="1515341338381" expanded="true" signature="6963:6999" ph="/// ... " />
-            <marker date="1515341338381" expanded="true" signature="7026:7046" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="7056:7277" ph="///     Constructor que se emplea para seleccionar un puerto ... " />
-            <marker date="1515341338381" expanded="true" signature="7310:7382" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="7392:7795" ph="///     Auto configuración para BusPirate. ... " />
-            <marker date="1515341338381" expanded="true" signature="7835:8126" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="8136:8723" ph="///     Permite establecer los parámetros de comunicación. ... " />
-            <marker date="1515341338381" expanded="true" signature="8833:10528" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="9052:9682" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="9771:10331" ph="{...}" />
-            <marker date="1515341338381" expanded="true" signature="10387:10518" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Consola.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="57" column="72" lean-forward="false" selection-start-line="57" selection-start-column="72" selection-end-line="57" selection-end-column="72" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -625,7 +497,7 @@
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -640,36 +512,32 @@
         <state relative-caret-position="2715">
           <caret line="183" column="56" lean-forward="false" selection-start-line="183" selection-start-column="56" selection-end-line="183" selection-end-column="56" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -734,36 +602,32 @@
         <state relative-caret-position="2835">
           <caret line="191" column="46" lean-forward="false" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -773,19 +637,22 @@
         <state relative-caret-position="30">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -796,7 +663,7 @@
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -866,19 +733,22 @@
         <state relative-caret-position="30">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -889,7 +759,7 @@
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -904,36 +774,32 @@
         <state relative-caret-position="2625">
           <caret line="177" column="77" lean-forward="false" selection-start-line="177" selection-start-column="77" selection-end-line="177" selection-end-column="77" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -998,19 +864,22 @@
         <state relative-caret-position="1215">
           <caret line="81" column="12" lean-forward="false" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1021,7 +890,7 @@
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1036,36 +905,32 @@
         <state relative-caret-position="2685">
           <caret line="181" column="38" lean-forward="false" selection-start-line="181" selection-start-column="38" selection-end-line="181" selection-end-column="38" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1131,7 +996,7 @@
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1146,36 +1011,32 @@
         <state relative-caret-position="4140">
           <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1185,19 +1046,22 @@
         <state relative-caret-position="465">
           <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1262,36 +1126,32 @@
         <state relative-caret-position="1725">
           <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1301,19 +1161,22 @@
         <state relative-caret-position="840">
           <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1324,7 +1187,7 @@
           <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1395,7 +1258,7 @@
           <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1410,19 +1273,22 @@
         <state relative-caret-position="165">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1432,36 +1298,32 @@
         <state relative-caret-position="4545">
           <caret line="305" column="10" lean-forward="false" selection-start-line="305" selection-start-column="10" selection-end-line="305" selection-end-column="10" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1527,7 +1389,7 @@
           <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1542,19 +1404,22 @@
         <state relative-caret-position="165">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1564,36 +1429,32 @@
         <state relative-caret-position="4545">
           <caret line="305" column="10" lean-forward="false" selection-start-line="305" selection-start-column="10" selection-end-line="305" selection-end-column="10" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1659,7 +1520,7 @@
           <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1674,36 +1535,32 @@
         <state relative-caret-position="720">
           <caret line="50" column="24" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1713,19 +1570,22 @@
         <state relative-caret-position="465">
           <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1791,7 +1651,7 @@
           <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1806,36 +1666,32 @@
         <state relative-caret-position="720">
           <caret line="50" column="24" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
           </folding>
         </state>
       </provider>
@@ -1845,19 +1701,22 @@
         <state relative-caret-position="465">
           <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
           <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1883,13 +1742,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Mono.framework/Versions/5.4.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74145">
+          <caret line="4513" column="4" lean-forward="false" selection-start-line="4513" selection-start-column="4" selection-end-line="4513" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusPirateTerminal.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/.idea.BusPirateTerminal/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <marker date="1515262988630" expanded="true" signature="0:661" ph="/* Program.cs: Bloque principal. ... */" />
-            <marker date="1515262988630" expanded="false" signature="669:712" ph="..." />
+            <marker date="1515262988630" expanded="true" signature="669:712" ph="..." />
             <marker date="1515262988630" expanded="true" signature="777:1529" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="831:1523" ph="{...}" />
             <marker date="1515262988630" expanded="true" signature="1064:1254" ph="{...}" />
@@ -1899,32 +1786,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Consola.cs">
+    <entry file="file://$USER_HOME$/Library/Logs/Rider2017.3/SolutionBuilder/JetBrainsLog.ReSharperBuild_2018_01_16_20_09_10_4262.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
-          <folding>
-            <marker date="1515341338372" expanded="false" signature="6:51" ph="..." />
-            <marker date="1515341338372" expanded="true" signature="205:3450" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="236:540" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="761:822" ph="///     Cabecera ... " />
-            <marker date="1515341338372" expanded="true" signature="860:1157" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1167:1282" ph="///     Cuerpo ... " />
-            <marker date="1515341338372" expanded="true" signature="1341:1610" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1620:1732" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
-            <marker date="1515341338372" expanded="true" signature="1772:2675" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="1993:2337" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2192:2323" ph="{...}" />
-            <marker date="1515341338372" expanded="true" signature="2685:2829" ph="///     Muestra los parámetros que se han empleado para ... " />
-            <marker date="1515341338372" expanded="true" signature="2892:3444" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SerialCom.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3045">
-          <caret line="208" column="31" lean-forward="false" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
+          <caret line="208" column="33" lean-forward="false" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
           <folding>
             <marker date="1515341338381" expanded="true" signature="0:683" ph="/* SerialCom.cs: Comunicaciones mediante puerto serie. ... */" />
             <marker date="1515341338381" expanded="false" signature="691:834" ph="..." />
@@ -1978,39 +1850,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Parametros.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4425">
-          <caret line="297" column="33" lean-forward="false" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
+        <state relative-caret-position="1995">
+          <caret line="135" column="81" lean-forward="false" selection-start-line="135" selection-start-column="81" selection-end-line="135" selection-end-column="81" />
           <folding>
-            <marker date="1515284465671" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
-            <marker date="1515284465671" expanded="false" signature="680:756" ph="..." />
-            <marker date="1515284465671" expanded="true" signature="830:12483" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="837:903" ph="///     Define los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="933:12481" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="1240:1276" ph="/* Constructor ... */" />
-            <marker date="1515284465671" expanded="true" signature="1318:3606" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="3705:3737" ph="/* Métodos ... */" />
-            <marker date="1515284465671" expanded="true" signature="3747:4108" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
-            <marker date="1515284465671" expanded="true" signature="4220:4373" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="4383:4895" ph="///     Acciones a realizar con los parámetros. ... " />
-            <marker date="1515284465671" expanded="true" signature="4997:6587" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="5366:5555" ph="/* TODO: Verificar el funcionamiento de la verificación y asignación de puerto COM ... */" />
-            <marker date="1515284465671" expanded="true" signature="6597:7147" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
-            <marker date="1515284465671" expanded="true" signature="7228:8303" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7251:7386" ph="/* TODO: verificar en windows el método de busqueda de puerto ... */" />
-            <marker date="1515284465671" expanded="true" signature="7460:7601" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7678:8293" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="7806:8279" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8021:8261" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8313:8673" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
-            <marker date="1515284465671" expanded="true" signature="8726:9377" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="8794:9289" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="9387:9748" ph="///     Verifica si la paridad introducida, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="9802:9994" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10004:10361" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="10415:10583" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="10593:10954" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
-            <marker date="1515284465671" expanded="true" signature="11011:11211" ph="{...}" />
-            <marker date="1515284465671" expanded="true" signature="11233:12463" ph="ParametrosDeEntrada" />
+            <marker date="1516184147307" expanded="true" signature="0:672" ph="/* Parametros.cs: Gestión de los parámetros ... */" />
+            <marker date="1516184147307" expanded="false" signature="680:756" ph="..." />
+            <marker date="1516184147307" expanded="true" signature="792:858" ph="///     Define los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="888:12502" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="1195:1231" ph="/* Constructor ... */" />
+            <marker date="1516184147307" expanded="true" signature="1273:3771" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="3870:3902" ph="/* Métodos ... */" />
+            <marker date="1516184147307" expanded="true" signature="3912:4273" ph="///     Muestra la ayuda sobre el uso de los parámetros ... " />
+            <marker date="1516184147307" expanded="true" signature="4385:4538" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="4548:5060" ph="///     Acciones a realizar con los parámetros. ... " />
+            <marker date="1516184147307" expanded="true" signature="5162:6689" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="6707:7257" ph="///     Si se indica un ID de puerto, se emplea para establecer la conexión ... " />
+            <marker date="1516184147307" expanded="true" signature="7338:8192" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7496:7637" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7714:8182" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="7842:8168" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8202:8562" ph="///     Verifica si la velocidad introducida, se corresponde con algun ... " />
+            <marker date="1516184147307" expanded="true" signature="8615:9266" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="8683:9178" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9276:9637" ph="///     Verifica si la paridad introducida, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="9691:9883" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="9893:10250" ph="///     Verifica si el número de bits de datos, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10304:10472" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="10482:10843" ph="///     Verifica si el numero de bits de parada, se corresponde ... " />
+            <marker date="1516184147307" expanded="true" signature="10900:11100" ph="{...}" />
+            <marker date="1516184147307" expanded="true" signature="11122:12484" ph="ParametrosDeEntrada" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Consola.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding>
+            <marker date="1516184188114" expanded="false" signature="6:51" ph="..." />
+            <marker date="1516184188114" expanded="true" signature="176:3584" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="205:3582" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="236:497" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="718:806" ph="///     Muestra la versión de la aplicación ... " />
+            <marker date="1516184188114" expanded="true" signature="839:944" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="962:1023" ph="///     Cabecera ... " />
+            <marker date="1516184188114" expanded="true" signature="1061:1308" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1318:1433" ph="///     Cuerpo ... " />
+            <marker date="1516184188114" expanded="true" signature="1492:1761" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="1771:1883" ph="///     Muestra el listado de dispositivos conectados a puertos COM ... " />
+            <marker date="1516184188114" expanded="true" signature="1923:2825" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2143:2487" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2342:2473" ph="{...}" />
+            <marker date="1516184188114" expanded="true" signature="2835:2979" ph="///     Muestra los parámetros que se han empleado para ... " />
+            <marker date="1516184188114" expanded="true" signature="3042:3576" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -10,8 +10,7 @@ namespace BusPirateTerminal
         public Consola()
         {
             Prompt = "::> ";
-            Version = "0.4";
-            ColorTexto = ConsoleColor.Red;
+            Version = "0.5";
 
             // RegExp, para dispositivos COM en OSX
             RegExpOsx = @"/dev/tty\.";
@@ -27,11 +26,18 @@ namespace BusPirateTerminal
         private ConsoleColor ColorTexto { get; }
 
         /// <summary>
+        ///     Muestra la versión de la aplicación
+        /// </summary>
+        public void MsgVersion()
+        {
+            Console.WriteLine($"Autor: Carlos AlMa - 2017 | Versión: {Version} \n");
+        }
+        
+        /// <summary>
         ///     Cabecera
         /// </summary>
         public void MsgPresentacion()
         {
-            Console.ForegroundColor = ColorTexto;
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Consola de acceso a Bus Pirate");
             Console.WriteLine("----------------------------------------------");
@@ -59,7 +65,6 @@ namespace BusPirateTerminal
             string listado = null;
             var cnt = 0;
 
-
             foreach (var puerto in puertos)
             {
                 var comEnUsoOsx = Regex.IsMatch(puerto, RegExpOsx);
@@ -86,11 +91,11 @@ namespace BusPirateTerminal
         public void MostrarParametros(SerialCom conexionSerie)
         {
             var listaParametros = "Parámetros de la conexión: \n" +
-                                  $" - ComPort: {conexionSerie.ComPort} \n" +
-                                  $" - ComSpeed: {conexionSerie.ComSpeed} \n" +
-                                  $" - ComParity: {conexionSerie.ComParity} \n" +
-                                  $" - ComBits: {conexionSerie.ComDataBits} \n" +
-                                  $" - ComStopBits{conexionSerie.ComStopBits}";
+                              $" - ComPort: {conexionSerie.ComPort} \n" +
+                              $" - ComSpeed: {conexionSerie.ComSpeed} \n" +
+                              $" - ComParity: {conexionSerie.ComParity} \n" +
+                              $" - ComBits: {conexionSerie.ComDataBits} \n" +
+                              $" - ComStopBits: {conexionSerie.ComStopBits}";
 
             Console.WriteLine($"{Prompt}{listaParametros}");
         }
