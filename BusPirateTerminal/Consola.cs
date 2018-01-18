@@ -23,7 +23,6 @@ namespace BusPirateTerminal
         public string Version { get; }
         private string RegExpOsx { get; }
         private string RegExpWin { get; }
-        private ConsoleColor ColorTexto { get; }
 
         /// <summary>
         ///     Muestra la versión de la aplicación
@@ -60,7 +59,6 @@ namespace BusPirateTerminal
         /// </summary>
         public void MsgListadoPuertos()
         {
-            var conexionSerie = new SerialCom();
             var puertos = SerialCom.ListarPuertosCom();
             string listado = null;
             var cnt = 0;

@@ -28,7 +28,7 @@ namespace BusPirateTerminal
             consola.MsgPresentacion();
 
             var parser = new CommandLineParser.CommandLineParser();
-            var param = new Parametros(consola.Version);
+            var param = new Parametros();
 
             try
             {

@@ -132,7 +132,7 @@ namespace BusPirateTerminal
         /// <returns>
         ///     Puerto localizado, de lo contrario null.
         /// </returns>
-        public string BucaPuertoComMediantePatron(string patron)
+        private string BucaPuertoComMediantePatron(string patron)
         {
             foreach (var puerto in ListarPuertosCom())
             {

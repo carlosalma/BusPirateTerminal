@@ -40,7 +40,7 @@ namespace BusPirateTerminal
         //
         // Constructor
         //
-        public Parametros(string version)
+        public Parametros()
         {
             Cabecera = "\n" +
                        "Terminal de comunicación vía puerto serie. \n\n" +
@@ -174,11 +174,8 @@ namespace BusPirateTerminal
         ///     Matriz que contiene los patrones de texto a localizar en el nombre
         ///     del dispositivo.
         /// </param>
-        public void ValidaParamPort(int selecPort, IEnumerable<string> patrones)
+        private void ValidaParamPort(int selecPort, IEnumerable<string> patrones)
         {
-            // TODO: Intentar eliminar paramPort = conexionSerie.ComPort;
-
-            var consola = new Consola();
 
             if (selecPort > 0)
             {
@@ -209,7 +206,7 @@ namespace BusPirateTerminal
         /// <param name="paramSpeed">
         ///     Velocidad de comunicación.
         /// </param>
-        public void ValidaParamSpeed(int paramSpeed)
+        private void ValidaParamSpeed(int paramSpeed)
         {
             var posibleSpeed = new List<int>
             {
@@ -248,7 +245,7 @@ namespace BusPirateTerminal
         /// <param name="paramParity">
         ///     Bit de paridad
         /// </param>
-        public void ValidaParidad(string paramParity)
+        private void ValidaParidad(string paramParity)
         {
             var posibleParity = new List<string> {"even", "mark", "none", "odd", "space"};
 
@@ -263,7 +260,7 @@ namespace BusPirateTerminal
         /// <param name="paramDataBits">
         ///     Número de bits de datos
         /// </param>
-        public void ValidaDataBits(int paramDataBits)
+        private void ValidaDataBits(int paramDataBits)
         {
             var posibleDataBits = new List<int> {5, 7, 8};
 
@@ -278,7 +275,7 @@ namespace BusPirateTerminal
         /// <param name="paramStopBits">
         ///     Número de bits de parada
         /// </param>
-        public void ValidaStopBits(string paramStopBits)
+        private void ValidaStopBits(string paramStopBits)
         {
             var posibleStopBits = new List<string> {"none", "one", "onepointfive", "two"};
 
