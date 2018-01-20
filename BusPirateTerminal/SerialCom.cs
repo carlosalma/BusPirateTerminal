@@ -1,8 +1,8 @@
 //
-// SerialCom.cs: Comunicaciones mediante puerto serie.
+// Program.cs: Bloque principal.
 //
 // Authors:
-//   Carlos Alonso (carlos@carlosalma.es)
+//   Carlos (carlos@carlosalma.es)
 //
 // Copyright (C) Apache License Version 2.0 (http://www.apache.org/licenses)
 // 
