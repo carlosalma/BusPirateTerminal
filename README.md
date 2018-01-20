@@ -15,8 +15,11 @@ El terminal dispone de dos modos de configuración:
 
 **Ejemplos:**
 
-- Modo automático: BusPirateTerminal.exe
-- Modo manual: BusPirateTerminal.exe -p 3 -s 115200 -a none -b 8 -i one
+```
+  Modo automático: BusPirateTerminal.exe
+
+  Modo manual: BusPirateTerminal.exe -p 3 -s 115200 -a none -b 8 -i one
+```
 
 ## Parámetros de comunicación serie
 
